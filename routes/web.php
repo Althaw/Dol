@@ -18,3 +18,8 @@ Route::get('/', function () {
     //return view('layouts/admin');
 });
 Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
+
+Route::get('/testing',function ($value='')
+{
+	return 'This is a testing page';
+});
