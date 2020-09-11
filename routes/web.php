@@ -13,10 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    //return view('welcome');
-    //return view('layouts/admin');
-});
+
 //backend
 Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
 
@@ -32,8 +29,5 @@ Route::get('detail','PageController@detailfun')->name('detailpage');
 Route::get('landing','PageController@landingfun')->name('landingpage');
 Route::get('comming','PageController@commingfun')->name('commingpage');
 
-Route::get('/testing',function ($value='')
-{
-	return 'This is a testing page';
-});
+
 
