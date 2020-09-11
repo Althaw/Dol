@@ -17,4 +17,16 @@ Route::get('/', function () {
     //return view('welcome');
     //return view('layouts/admin');
 });
+//backend
 Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
+
+Route::resource('movies','MovieController');
+
+
+
+
+//frontend
+Route::get('/','PageController@indexfun')->name('homepage');
+Route::get('detail','PageController@detailfun')->name('detailpage');
+Route::get('landing','PageController@landingfun')->name('landingpage');
+Route::get('comming','PageController@commingfun')->name('commingpage');
