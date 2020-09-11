@@ -20,6 +20,7 @@ Route::get('/', function () {
 //backend
 Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
 
+
 Route::resource('movies','MovieController');
 
 
@@ -30,3 +31,9 @@ Route::get('/','PageController@indexfun')->name('homepage');
 Route::get('detail','PageController@detailfun')->name('detailpage');
 Route::get('landing','PageController@landingfun')->name('landingpage');
 Route::get('comming','PageController@commingfun')->name('commingpage');
+
+Route::get('/testing',function ($value='')
+{
+	return 'This is a testing page';
+});
+
