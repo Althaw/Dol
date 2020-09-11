@@ -20,6 +20,12 @@ Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
 
 Route::resource('movies','MovieController');
 
+Route::resource('actors','ActorController');
+
+Route::resource('directors','DirectorController');
+
+Route::resource('genre','GenreController');
+
 
 
 
