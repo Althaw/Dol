@@ -7,8 +7,6 @@
 		<a href="{{route('actors.create')}}" class="btn btn-info ">Add New</a>
 	</div>
 </div>
-
-
 <div class="container">
 	
 
@@ -21,16 +19,13 @@
 					<tr>
 						<th>No</th>
 						<th>Actor Name</th>
-						
 						<th>Gender</th>
 						<th>Actions</th>
 					</tr>
 				</thead>
 				<tbody>
-					
-					
-					<tr>
-						@php $i=1; @endphp
+					{{-- <tr> --}}
+						{{-- @php $i=1; @endphp
 						@foreach ($actors as $actor)
 						<td>{{$i++}}</td>
 						<td>{{$actor->name}}</td>
@@ -46,7 +41,7 @@
 							</form>
 						</td>
 					</tr>
-					@endforeach
+					@endforeach --}}
 					
 
 				</tbody>

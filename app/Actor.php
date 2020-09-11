@@ -8,9 +8,10 @@ class Actor extends Model
 {
     protected $fillable=['name','gender'];
 
-    public function actors($value='')
+    public function movies($value='')
     {
-    	return $this->belongsToMany('App\Actor','movie_actor');
+    	return $this->belongsToMany('App\Movie','movie_actor')
+    	             ->withTimestamps();
                 
     }
 }

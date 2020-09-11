@@ -8,8 +8,8 @@ class Director extends Model
 {
 protected $fillable=['name'];
 
-    public function ($value='')
+    public function movies($value='')
     {
-    	 return $this->belongsTO('App\Movie','movie_director');
+    	 return $this->belongsTO('App\Movie');
     }
 }

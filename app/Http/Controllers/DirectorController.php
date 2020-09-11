@@ -14,7 +14,7 @@ class DirectorController extends Controller
      */
     public function index()
     {
-        //
+        return view('backend.directors.index');
     }
 
     /**
@@ -24,7 +24,7 @@ class DirectorController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.directors.create');
     }
 
     /**
@@ -35,7 +35,20 @@ class DirectorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd($request);
+        // Validation
+        $request->validate([
+            //form input name
+            "name"=>'required'
+        ]);
+        //Data insert
+            $director = new Director;
+            //database column=input name
+            $director->name=$request->name;
+            $director->save();
+
+        //redirect
+            return redirect()->route('directors.index');
     }
 
     /**
@@ -57,7 +70,7 @@ class DirectorController extends Controller
      */
     public function edit(Director $director)
     {
-        //
+        return view('backend.directors.edit',compact('director'));
     }
 
     /**
@@ -69,7 +82,18 @@ class DirectorController extends Controller
      */
     public function update(Request $request, Director $director)
     {
-        //
+        $request->validate([
+            //form input name
+            "name"=>'required'
+        ]);
+        //Data insert
+            $director = new Director;
+            //database column=input name
+            $director->name=$request->name;
+            $director->save();
+
+        //redirect
+            return redirect()->route('directors.index');
     }
 
     /**

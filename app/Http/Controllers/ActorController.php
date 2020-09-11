@@ -16,8 +16,8 @@ class ActorController extends Controller
      */
     public function index()
     {
-        $actors =Actor::all();
-        return view('backend.actors.index',compact('actors'));
+        // $actors =Actor::all();
+        return view('backend.actors.index');
     }
 
     /**
@@ -27,6 +27,7 @@ class ActorController extends Controller
      */
     public function create()
     {
+
         return view('backend.actors.create');
     }
 
@@ -60,8 +61,8 @@ class ActorController extends Controller
      */
     public function show(Actor $actor)
     {
-        $actors =Actor::all();
-        return view('backend.actors.detail',compact('actors'));
+        // $actors =Actor::all();
+        // return view('backend.actors.detail',compact('actors'));
     }
 
     /**
@@ -76,7 +77,7 @@ class ActorController extends Controller
         
         $actors =Actor::all();
 
-        return view('backend.actors.edit',compact('actors'));
+        return view('backend.actors.edit',compact('actor'));
     }
 
     /**

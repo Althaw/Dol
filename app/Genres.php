@@ -8,8 +8,9 @@ class Genres extends Model
 {
     protected $fillable=['title'];
 
-    public function ($value='')
+    public function movies($value='')
     {
-    	 return $this->belongsTOMany('App\Movie','movie_genre');
+    	 return $this->belongsTOMany('App\Movie','movie_genre')
+    	              ->withTimestamps();
     }
 }
