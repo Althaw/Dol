@@ -14,7 +14,7 @@ class GenresController extends Controller
      */
     public function index()
     {
-        //
+        return view('backend.genres.index');
     }
 
     /**
@@ -24,7 +24,7 @@ class GenresController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.genres.create');
     }
 
     /**
@@ -35,7 +35,20 @@ class GenresController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd($request);
+        // Validation
+        $request->validate([
+            //form input name
+            "name"=>'required'
+        ]);
+        //Data insert
+            $genres = new Genres;
+            //database column=input name
+            $genres->title=$request->title;
+            $genres->save();
+
+        //redirect
+            return redirect()->route('genres.index');
     }
 
     /**
@@ -57,7 +70,7 @@ class GenresController extends Controller
      */
     public function edit(Genres $genres)
     {
-        //
+        return view('backend.genres.edit',compact('genres'));
     }
 
     /**
@@ -69,7 +82,20 @@ class GenresController extends Controller
      */
     public function update(Request $request, Genres $genres)
     {
-        //
+        //dd($request);
+        // Validation
+        $request->validate([
+            //form input name
+            "name"=>'required'
+        ]);
+        //Data insert
+            $genres = new Genres;
+            //database column=input name
+            $genres->title=$request->title;
+            $genres->save();
+
+        //redirect
+            return redirect()->route('genres.index');
     }
 
     /**

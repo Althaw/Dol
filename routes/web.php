@@ -24,7 +24,7 @@ Route::resource('actors','ActorController');
 
 Route::resource('directors','DirectorController');
 
-Route::resource('genre','GenreController');
+Route::resource('genres','GenresController');
 
 
 
