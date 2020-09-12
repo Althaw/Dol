@@ -113,7 +113,7 @@ class ActorController extends Controller
     public function destroy(Actor $actor)
     {
 
-        $actors->delete();
+        $actor->delete();
         return redirect()->route('actors.index');
     }
 }

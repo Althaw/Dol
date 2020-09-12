@@ -32,9 +32,7 @@
 <body>
 <!--preloading-->
 <div id="preloader">
-    {{-- <img class="logo" src="{{ asset('images/logo1.png')}}" alt="" width="119" height="58"> --}}
-    <div id="status">
-        <span></span>
+     <img class="logo" src="{{ asset('images/d4.jpg')}}" alt="" width="150" height="70"><span></span>
         <span></span>
     </div>
 </div>
@@ -133,7 +131,7 @@
 							<span></span>
 						</div>
 				    </div>
-				    <a href="index-2.html"><img class="logo" src="{{ asset('images/logo1.png')}}" alt="" width="119" height="58"></a>
+				    <a href="index-2.html"><img class="logo" src="{{ asset('images/d4.jpg')}}" alt="" width="150" height="60"></a>
 			    </div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse flex-parent" id="bs-example-navbar-collapse-1">
@@ -240,7 +238,7 @@
 	<div class="container">
 		<div class="flex-parent-ft">
 			<div class="flex-child-ft item1">
-				 <a href="index-2.html"><img class="logo" src="{{ asset('images/logo1.png')}}" alt=""></a>
+				 <a href="index-2.html"><img class="logo" src="{{ asset('images/d4.jpg')}}" alt="" width="150" height="70"></a>
 				 <p>5th Avenue st, manhattan<br>
 				New York, NY 10001</p>
 				<p>Call us: <a href="#">(+01) 202 342 6789</a></p>
