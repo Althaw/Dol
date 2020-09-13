@@ -140,16 +140,39 @@
 							<a href="#page-top"></a>
 						</li>
 						<li class="dropdown first">
-							<a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown">
-							Movies<i class="fa fa-angle-down" aria-hidden="true"></i>
-							</a>
-							<ul class="dropdown-menu level1">
+							
+							<a class="nav-item nav-link  text-white mx-3" href="{{ route('moviepage')}}">Movies</a>
+								
+
+
+							 {{-- <ul class="dropdown-menu level1">
 								<li><a href="index-2.html">Series</a></li>
 								<li><a href="homev2.html">Home 02</a></li>
 								<li><a href="homev3.html">Home 03</a></li>
+							</ul>  --}}
+						</li>
+
+
+						<li class="dropdown first">
+							<a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" data-hover="dropdown">
+							Movie Type<i class="fa fa-angle-down" aria-hidden="true"></i>
+							</a>
+							<ul class="dropdown-menu level1">
+								<li><a href="">Action</a></li>
+								<li><a href="">Adventure </a></li>
+								<li><a href="">Animation</a></li>
+								<li><a href="">Bollywood</a></li>
+								<li><a href="">Crime</a></li>
+								<li><a href="">Comedy</a></li>
+								<li><a href="">Drama</a></li>
+								<li><a href="">Funny</a></li>
+								
 							</ul>
 						</li>
-						{{-- <li class="dropdown first">
+
+
+
+					{{-- 	 <li class="dropdown first">
 							<a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" data-hover="dropdown">
 							mo<i class="fa fa-angle-down" aria-hidden="true"></i>
 							</a>
@@ -165,7 +188,9 @@
 								<li><a href="moviesingle.html">Movie single</a></li>
 								<li class="it-last"><a href="seriessingle.html">Series single</a></li>
 							</ul>
-						</li> --}}
+						</li>  --}}
+
+  
 						<li class="dropdown first">
 							<a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" data-hover="dropdown">
 							celebrities <i class="fa fa-angle-down" aria-hidden="true"></i>
@@ -177,7 +202,7 @@
 								<li class="it-last"><a href="celebritysingle.html">celebrity single</a></li>
 							</ul>
 						</li>
-						<li class="dropdown first">
+						 {{-- <li class="dropdown first">
 							<a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" data-hover="dropdown">
 							news <i class="fa fa-angle-down" aria-hidden="true"></i>
 							</a>
@@ -186,8 +211,8 @@
 								<li><a href="bloggrid.html">blog Grid</a></li>
 								<li class="it-last"><a href="blogdetail.html">blog Detail</a></li>
 							</ul>
-						</li>
-						<li class="dropdown first">
+						</li> --}}
+						{{-- <li class="dropdown first">
 							<a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" data-hover="dropdown">
 							community <i class="fa fa-angle-down" aria-hidden="true"></i>
 							</a>
@@ -197,17 +222,17 @@
 								<li><a href="userprofile.html">user profile</a></li>
 								<li class="it-last"><a href="userrate.html">user rate</a></li>
 							</ul>
-						</li>
-					</ul>
+						</li> --}}
+					</ul> 
 					<ul class="nav navbar-nav flex-child-menu menu-right">
 						<li class="dropdown first">
 							<a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" data-hover="dropdown">
 							pages <i class="fa fa-angle-down" aria-hidden="true"></i>
 							</a>
 							<ul class="dropdown-menu level1">
-								<li><a href="landing.html">Landing</a></li>
-								{{-- <li><a href="404.html">404 Page</a></li> --}}
-								<li class="it-last"><a href="comingsoon.html">Coming soon</a></li>
+								<li><a href="{{ route('landingpage')}}">Landing</a></li>
+								 {{-- <li><a href="404.html">404 Page</a></li>  --}}
+								<li class="it-last"><a href="{{ route('commingpage')}}">Coming soon</a></li>
 							</ul>
 						</li>                
 						<li><a href="#">Help</a></li>
