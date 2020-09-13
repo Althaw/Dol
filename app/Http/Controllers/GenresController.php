@@ -14,7 +14,8 @@ class GenresController extends Controller
      */
     public function index()
     {
-        return view('backend.genres.index');
+        $genres=Genres::all();
+        return view('backend.genres.index',compact('genres'));
     }
 
     /**
@@ -39,7 +40,7 @@ class GenresController extends Controller
         // Validation
         $request->validate([
             //form input name
-            "name"=>'required'
+            "title"=>'required'
         ]);
         //Data insert
             $genres = new Genres;
@@ -68,8 +69,9 @@ class GenresController extends Controller
      * @param  \App\Genres  $genres
      * @return \Illuminate\Http\Response
      */
-    public function edit(Genres $genres)
+    public function edit($id)
     {
+        $genres=Genres::find($id);
         return view('backend.genres.edit',compact('genres'));
     }
 
@@ -80,20 +82,17 @@ class GenresController extends Controller
      * @param  \App\Genres  $genres
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Genres $genres)
+    public function update(Request $request,$id)
     {
-        //dd($request);
-        // Validation
         $request->validate([
             //form input name
-            "name"=>'required'
+            "title"=>'required'
         ]);
         //Data insert
-            $genres = new Genres;
+            $genres =Genres::find($id);
             //database column=input name
             $genres->title=$request->title;
             $genres->save();
-
         //redirect
             return redirect()->route('genres.index');
     }
@@ -104,8 +103,10 @@ class GenresController extends Controller
      * @param  \App\Genres  $genres
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Genres $genres)
+    public function destroy($id)
     {
-        //
+        $genres=Genres::find($id);
+        $genres->delete();
+      return redirect()->route('genres.index');
     }
 }

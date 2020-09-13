@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Movie extends Model
 {
 	protected $fillable = [
-        'title','photo', 'link', 'star', 'good_point', 'quality', 'size', 'review','release_year','run_time','release_country','rating'
+        'title','photo', 'director', 'genre', 'link', 'star', 'good_point', 'quality', 'size', 'review','release_year','run_time','release_country','rating'
     ];
     public function actors($value='')
     {

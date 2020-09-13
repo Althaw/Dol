@@ -24,24 +24,24 @@
 					</tr>
 				</thead>
 				<tbody>
-					{{-- <tr> --}}
-						{{-- @php $i=1; @endphp
+						@php $i=1; @endphp
 						@foreach ($actors as $actor)
+						<tr>
 						<td>{{$i++}}</td>
 						<td>{{$actor->name}}</td>
 						<td>{{$actor->gender}}</td>
 						
 						<td>
-							<a href="{{route('actors.show',$actor->id)}}" class="btn btn-info">Detail</a>
+							{{-- <a href="{{route('actors.show',$actor->id)}}" class="btn btn-info">Detail</a> --}}
 							<a href="{{route('actors.edit',$actor->id)}}" class="btn btn-warning">Edit</a>
-							<form method="post" action="{{route('actors.destroy',$actor->id)}}" onsubmit="return confirm('Are you sure?')" class="d-inline-block">
+							<form method="post" action="{{ route('actors.destroy',$actor->id)}}" onsubmit="return confirm('Are you sure?')" class="d-inline-block">
 								@csrf
 								@method('DELETE')
 								<input type="submit" class="btn btn-danger" value="Delete">
 							</form>
 						</td>
 					</tr>
-					@endforeach --}}
+					@endforeach
 					
 
 				</tbody>

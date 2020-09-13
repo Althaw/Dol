@@ -23,14 +23,14 @@
 		<div class="form-group row">
 			<label class="col-sm-2 col-form-label">Gender</label>
 			<div class="form-check">
-				<input class="form-check-input" type="radio" name="gender" id="exampleRadios1" value="option1" checked>
+				<input class="form-check-input" type="radio" name="gender" id="exampleRadios1" value="Male" checked>
 				<label class="form-check-label" for="exampleRadios1">
 					Male
 				</label>
 			</div>
 			<br>
 			<div class="form-check ml-3">
-				<input class="form-check-input" type="radio" name="gender" id="exampleRadios2" value="option2">
+				<input class="form-check-input" type="radio" name="gender" id="exampleRadios2" value="Female">
 				<label class="form-check-label" for="exampleRadios2">
 					Female
 				</label>

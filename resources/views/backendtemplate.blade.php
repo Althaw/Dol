@@ -18,6 +18,10 @@
   <!-- Custom styles for this template-->
   <link href="{{ asset('css/sb-admin-2.min.css')}}" rel="stylesheet">
 
+  {{-- select2.org --}}
+  
+
+
 </head>
 
 <body id="page-top">
@@ -415,6 +419,22 @@
           <script src="{{ asset('js/demo/chart-area-demo.js')}}"></script>
           <script src="{{ asset('js/demo/chart-pie-demo.js')}}"></script>
           <script type="text/javascript" src="{{ asset('js/order_list.js')}}"></script>
+
+          {{-- select2.org --}}
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+          <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+          <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+          
+          <script type="text/javascript">
+            $("#star").select2({
+              placeholder:'select actors',
+              allowClear:true
+            });
+            $("#genre").select2({
+              placeholder:'select genres',
+              allowClear:true
+            });
+          </script>
 
         </body>
 

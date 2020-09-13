@@ -16,24 +16,23 @@
 				</tr>
 			</thead>
 			<tbody>
-				{{-- @php
+				@php
 					$i=1;
 					@endphp
-					@foreach ($brands as $brand)
+					@foreach ($directors as $director)
 					<tr>
 						<td>{{$i++}}</td>
-						<td>{{$brand->name}}</td>
-						<td><img src="{{$brand->photo}}" width="120" height="100"></td>
+						<td>{{$director->name}}</td>
 						<td>
-						<a href="{{route('brands.edit',$brand->id)}}" class="btn btn-warning">Edit</a>
-						<form method="post" action="{{route('brands.destroy',$brand->id)}}" onsubmit="return confirm('Are You Sure?')">
+						<a href="{{route('directors.edit',$director->id)}}" class="btn btn-warning">Edit</a>
+						<form method="post" action="{{route('directors.destroy',$director->id)}}" onsubmit="return confirm('Are You Sure?')">
 							@csrf
 							@method('DELETE')
 							<button class="btn btn-danger" type="submit">Delete</button>
 						</form>
 						</td>
 					</tr>
-					@endforeach --}}
+					@endforeach
 			</tbody>
 		</table>
 	</div>

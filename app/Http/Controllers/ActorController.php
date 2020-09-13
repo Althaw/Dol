@@ -16,8 +16,8 @@ class ActorController extends Controller
      */
     public function index()
     {
-        // $actors =Actor::all();
-        return view('backend.actors.index');
+        $actors =Actor::all();
+        return view('backend.actors.index',compact('actors'));
     }
 
     /**
@@ -40,7 +40,8 @@ class ActorController extends Controller
     public function store(Request $request)
     {
         $request ->validate([
-            'name'=>'required'
+            'name'=>'required',
+            'gender'=>'required'
         ]);
 
         $actors =new Actor;
@@ -71,13 +72,12 @@ class ActorController extends Controller
      * @param  \App\Actor  $actor
      * @return \Illuminate\Http\Response
      */
-    public function edit(Actor $actor)
+    public function edit($id)
     {
 
         
-        $actors =Actor::all();
-
-        return view('backend.actors.edit',compact('actor'));
+        $actors =Actor::find($id);
+        return view('backend.actors.edit',compact('actors'));
     }
 
     /**
@@ -87,14 +87,13 @@ class ActorController extends Controller
      * @param  \App\Actor  $actor
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Actor $actor)
+    public function update(Request $request,$id)
     {
         $request ->validate([
             'name'=>'required'
         ]);
 
-        $actors =new Actor;
-        
+        $actors=Actor::find($id);
         $actors->name=$request->name;
         //$actors->age=$request->age;
         $actors->gender=$request->gender;
@@ -110,8 +109,9 @@ class ActorController extends Controller
      * @param  \App\Actor  $actor
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Actor $actor)
+    public function destroy($id)
     {
+        $actors=Actor::find($id);
 
         $actors->delete();
         return redirect()->route('actors.index');

@@ -14,7 +14,8 @@ class DirectorController extends Controller
      */
     public function index()
     {
-        return view('backend.directors.index');
+        $directors=Director::all();
+        return view('backend.directors.index',compact('directors'));
     }
 
     /**
@@ -68,8 +69,9 @@ class DirectorController extends Controller
      * @param  \App\Director  $director
      * @return \Illuminate\Http\Response
      */
-    public function edit(Director $director)
+    public function edit($id)
     {
+        $director=Director::find($id);
         return view('backend.directors.edit',compact('director'));
     }
 
@@ -80,14 +82,13 @@ class DirectorController extends Controller
      * @param  \App\Director  $director
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Director $director)
+    public function update(Request $request,$id)
     {
         $request->validate([
             //form input name
             "name"=>'required'
         ]);
-        //Data insert
-            $director = new Director;
+           $director=Director::find($id);
             //database column=input name
             $director->name=$request->name;
             $director->save();
@@ -102,8 +103,10 @@ class DirectorController extends Controller
      * @param  \App\Director  $director
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Director $director)
+    public function destroy($id)
     {
-        //
+        $director=Director::find($id);
+        $director->delete();
+        return redirect()->route('directors.index');
     }
 }

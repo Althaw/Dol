@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Movie;
+use App\Actor;
+use App\Director;
+use App\Genres;
 use Illuminate\Http\Request;
 
 class MovieController extends Controller
@@ -14,7 +17,8 @@ class MovieController extends Controller
      */
     public function index()
     {
-        return view('backend.movies.index');
+        $movies=Movie::all();
+        return view('backend.movies.index',compact('movies'));
     }
 
     /**
@@ -24,7 +28,10 @@ class MovieController extends Controller
      */
     public function create()
     {
-        return view('backend.movies.create');
+        $actors=Actor::all();
+        $directors=Director::all();
+        $genres=Genres::all();
+        return view('backend.movies.create',compact('actors','directors','genres'));
     }
 
     /**
@@ -36,11 +43,15 @@ class MovieController extends Controller
     public function store(Request $request)
     {
         //dd($request);
+        // $stars=json_decode($request->star);//array to string conversion
+        // dd($stars);
         // Validation
         $request->validate([
             //form input name
             "title"=>'required',
             "photo"=>'required',
+            'director'=>'required',
+            'genre'=>'required',
             "link"=>'required',
             "star"=>'required',
             "point"=>'required',
@@ -53,6 +64,10 @@ class MovieController extends Controller
             "rating"=>'required'
 
         ]);
+        $starString=implode(',', $request->input('star'));
+        $genreString=implode(',', $request->input('genre'));
+        //dd($arrayToString);
+
             
         //If include file , upload file
         $imageName = time().'.'.$request->photo->extension();
@@ -63,8 +78,10 @@ class MovieController extends Controller
             //database column=input name
             $movie->title=$request->title;
             $movie->photo=$path;
+            $movie->director=$request->director;
+            $movie->genre=$genreString;
             $movie->link=$request->link;
-            $movie->stars=$request->star;
+            $movie->stars=$starString;
             $movie->good_point=$request->point;
             $movie->quality=$request->quality;
             $movie->size=$request->size;
@@ -74,6 +91,7 @@ class MovieController extends Controller
             $movie->release_country=$request->country;
             $movie->rating=$request->rating;
             $movie->save();
+            //$movie->actors()->attach($actors);
 
         //redirect
             return redirect()->route('movies.index');
@@ -97,9 +115,13 @@ class MovieController extends Controller
      * @param  \App\Movie  $movie
      * @return \Illuminate\Http\Response
      */
-    public function edit(Movie $movie)
+    public function edit($id)
     {
-        return view('backend.movies.edit');
+        $movies=Movie::find($id);
+        $actors=Actor::all();
+        $directors=Director::all();
+        $genres=Genres::all();
+        return view('backend.movies.edit',compact('movies','actors','directors','genres'));
     }
 
     /**
@@ -109,13 +131,16 @@ class MovieController extends Controller
      * @param  \App\Movie  $movie
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Movie $movie)
+    public function update(Request $request,$id)
     {
+        //dd($request);
         // Validation
         $request->validate([
             //form input name
             "title"=>'required',
             "photo"=>'required',
+            'director'=>'required',
+            'genre'=>'required',
             "link"=>'required',
             "star"=>'required',
             "point"=>'required',
@@ -128,7 +153,7 @@ class MovieController extends Controller
             "rating"=>'required'
 
         ]);
-            
+            $movie=Movie::find($id);
          //file upload , if data
         if($request->hasFile('photo')){
             $imageName = time().'.'.$request->photo->extension();
@@ -138,12 +163,11 @@ class MovieController extends Controller
         }else{
             $path=$request->oldphoto;
         }
-
-        //Data insert
-            $movie = new Movie;
             //database column=input name
             $movie->title=$request->title;
             $movie->photo=$path;
+            $movie->director=$request->director;
+            $movie->genre=$request->genre;
             $movie->link=$request->link;
             $movie->stars=$request->star;
             $movie->good_point=$request->point;
@@ -166,8 +190,10 @@ class MovieController extends Controller
      * @param  \App\Movie  $movie
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Movie $movie)
+    public function destroy($id)
     {
-        //
+        $movie=Movie::find($id);
+        $movie->delete();
+        return redirect()->route('movies.index');
     }
 }

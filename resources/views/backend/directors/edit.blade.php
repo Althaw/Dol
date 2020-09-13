@@ -8,7 +8,7 @@
 </div>
 <div class="container">
 	<div class="row">
-		<form action="{{route('directors.store',$director->id)}}">
+		<form action="{{route('directors.update',$director->id)}}" method="post">
 			@csrf
 			@method('PUT')
 			<div class="row">
@@ -23,7 +23,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<br>
-					<input type="submit" value="Register" class="btn btn-info">
+					<input type="submit" value="Update" class="btn btn-info">
 				</div>
 			</div>
 		</form>

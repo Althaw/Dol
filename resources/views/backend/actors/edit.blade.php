@@ -6,7 +6,7 @@
 
 		
 	</div>
-	<form class="col-md-6 my-4" action="{{route('actors.update',$actor->id)}}" >
+	<form class="col-md-6 my-4" action="{{route('actors.update',$actors->id)}}" method="post">
 		@csrf
 		@method('PUT')
 		@error('name')
@@ -16,7 +16,7 @@
 		<div class="form-group row">
 			<label  class="col-sm-2 col-form-label"> Actor Name</label>
 			<div class="col-sm-10">
-				<input type="text" class="form-control" name="name" value="{{$actor->name}}">
+				<input type="text" class="form-control" name="name" value="{{$actors->name}}">
 			</div>
 		</div>
 		@error('gender')
@@ -24,9 +24,19 @@
 		@enderror
 		<div class="form-group row">
 			<label  class="col-sm-2 col-form-label">Gender</label>
-			<div class="col-sm-10">
-				<input type="text" class="form-control" name="gender" value="{{$actor->gender}}">
-				
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="gender" id="exampleRadios1" value="Male">
+
+				<label class="form-check-label" for="exampleRadios1">
+					Male
+				</label>
+			</div>
+			<br>
+			<div class="form-check ml-3">
+				<input class="form-check-input" type="radio" name="gender" id="exampleRadios2" value="Female">
+				<label class="form-check-label" for="exampleRadios2">
+					Female
+				</label>
 			</div>
 		</div>
 		<div class="form-group row">

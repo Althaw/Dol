@@ -17,8 +17,10 @@ class CreateMoviesTable extends Migration
             $table->id();
             $table->string('title');
             $table->text('photo');
+            $table->string('director');
+            $table->string('genre');
             $table->text('link');
-            $table->text('stars');
+            $table->string('stars');
             $table->text('good_point');
             $table->string('quality');
             $table->string('size');
