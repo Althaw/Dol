@@ -34,6 +34,6 @@ Route::get('/','PageController@indexfun')->name('homepage');
 Route::get('detail','PageController@detailfun')->name('detailpage');
 Route::get('landing','PageController@landingfun')->name('landingpage');
 Route::get('comming','PageController@commingfun')->name('commingpage');
-
-
+Route::get('comming','PageController@commingfun')->name('commingpage');
+Route::get('movie','PageController@moviefun')->name('moviepage');
 

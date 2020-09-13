@@ -1083,7 +1083,7 @@
 	</div>
 </div>
 <!-- latest new v1 section-->
-<div class="latestnew">
+{{-- <div class="latestnew">
 	<div class="container">
 		<div class="row ipad-width">
 			<div class="col-md-8">
@@ -1187,6 +1187,6 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div> --}}
 <!--end of latest new v1 section-->
 @endsection

@@ -32,9 +32,7 @@
 <body>
 <!--preloading-->
 <div id="preloader">
-    {{-- <img class="logo" src="{{ asset('images/logo1.png')}}" alt="" width="119" height="58"> --}}
-    <div id="status">
-        <span></span>
+     <img class="logo" src="{{ asset('images/d4.jpg')}}" alt="" width="150" height="70"><span></span>
         <span></span>
     </div>
 </div>
@@ -133,7 +131,7 @@
 							<span></span>
 						</div>
 				    </div>
-				    <a href="index-2.html"><img class="logo" src="{{ asset('images/logo1.png')}}" alt="" width="119" height="58"></a>
+				    <a href="index-2.html"><img class="logo" src="{{ asset('images/d4.jpg')}}" alt="" width="150" height="60"></a>
 			    </div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse flex-parent" id="bs-example-navbar-collapse-1">
@@ -142,16 +140,39 @@
 							<a href="#page-top"></a>
 						</li>
 						<li class="dropdown first">
-							<a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown">
-							Movies<i class="fa fa-angle-down" aria-hidden="true"></i>
-							</a>
-							<ul class="dropdown-menu level1">
+							
+							<a class="nav-item nav-link  text-white mx-3" href="{{ route('moviepage')}}">Movies</a>
+								
+
+
+							 {{-- <ul class="dropdown-menu level1">
 								<li><a href="index-2.html">Series</a></li>
 								<li><a href="homev2.html">Home 02</a></li>
 								<li><a href="homev3.html">Home 03</a></li>
+							</ul>  --}}
+						</li>
+
+
+						<li class="dropdown first">
+							<a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" data-hover="dropdown">
+							Movie Type<i class="fa fa-angle-down" aria-hidden="true"></i>
+							</a>
+							<ul class="dropdown-menu level1">
+								<li><a href="">Action</a></li>
+								<li><a href="">Adventure </a></li>
+								<li><a href="">Animation</a></li>
+								<li><a href="">Bollywood</a></li>
+								<li><a href="">Crime</a></li>
+								<li><a href="">Comedy</a></li>
+								<li><a href="">Drama</a></li>
+								<li><a href="">Funny</a></li>
+								
 							</ul>
 						</li>
-						{{-- <li class="dropdown first">
+
+
+
+					{{-- 	 <li class="dropdown first">
 							<a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" data-hover="dropdown">
 							mo<i class="fa fa-angle-down" aria-hidden="true"></i>
 							</a>
@@ -167,7 +188,9 @@
 								<li><a href="moviesingle.html">Movie single</a></li>
 								<li class="it-last"><a href="seriessingle.html">Series single</a></li>
 							</ul>
-						</li> --}}
+						</li>  --}}
+
+  
 						<li class="dropdown first">
 							<a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" data-hover="dropdown">
 							celebrities <i class="fa fa-angle-down" aria-hidden="true"></i>
@@ -179,7 +202,7 @@
 								<li class="it-last"><a href="celebritysingle.html">celebrity single</a></li>
 							</ul>
 						</li>
-						<li class="dropdown first">
+						 {{-- <li class="dropdown first">
 							<a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" data-hover="dropdown">
 							news <i class="fa fa-angle-down" aria-hidden="true"></i>
 							</a>
@@ -188,8 +211,8 @@
 								<li><a href="bloggrid.html">blog Grid</a></li>
 								<li class="it-last"><a href="blogdetail.html">blog Detail</a></li>
 							</ul>
-						</li>
-						<li class="dropdown first">
+						</li> --}}
+						{{-- <li class="dropdown first">
 							<a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" data-hover="dropdown">
 							community <i class="fa fa-angle-down" aria-hidden="true"></i>
 							</a>
@@ -199,17 +222,17 @@
 								<li><a href="userprofile.html">user profile</a></li>
 								<li class="it-last"><a href="userrate.html">user rate</a></li>
 							</ul>
-						</li>
-					</ul>
+						</li> --}}
+					</ul> 
 					<ul class="nav navbar-nav flex-child-menu menu-right">
 						<li class="dropdown first">
 							<a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" data-hover="dropdown">
 							pages <i class="fa fa-angle-down" aria-hidden="true"></i>
 							</a>
 							<ul class="dropdown-menu level1">
-								<li><a href="landing.html">Landing</a></li>
-								{{-- <li><a href="404.html">404 Page</a></li> --}}
-								<li class="it-last"><a href="comingsoon.html">Coming soon</a></li>
+								<li><a href="{{ route('landingpage')}}">Landing</a></li>
+								 {{-- <li><a href="404.html">404 Page</a></li>  --}}
+								<li class="it-last"><a href="{{ route('commingpage')}}">Coming soon</a></li>
 							</ul>
 						</li>                
 						<li><a href="#">Help</a></li>
@@ -240,7 +263,7 @@
 	<div class="container">
 		<div class="flex-parent-ft">
 			<div class="flex-child-ft item1">
-				 <a href="index-2.html"><img class="logo" src="{{ asset('images/logo1.png')}}" alt=""></a>
+				 <a href="index-2.html"><img class="logo" src="{{ asset('images/d4.jpg')}}" alt="" width="150" height="70"></a>
 				 <p>5th Avenue st, manhattan<br>
 				New York, NY 10001</p>
 				<p>Call us: <a href="#">(+01) 202 342 6789</a></p>

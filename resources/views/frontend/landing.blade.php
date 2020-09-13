@@ -1,7 +1,7 @@
 @extends('frontend')
 @section('maincontent')
 <div class="landing-hero">
-	<img src="images/logo1.png" alt="Logo">
+	<img src="images/d4.jpg" alt="Logo"width="150" height="130">
 	<div class="row landing-hero-text">
 		<h2>MOST COMPLETED</h2>
 		<h2 class="text-yellow">FILM REVIEW  &middot;  MOVIE DATABASE</h2>
@@ -14,7 +14,7 @@
 		<div class="col-md-6">
 			<img src="images/uploads/landing-dark-version.png" alt="Dark Version">
 			<h2>DARK VERSION</h2>
-			<a href="index-2.html" target="blank_" class="redbtn">SEE DEMO</a>
+			<a href="{{ route('homepage')}}" target="blank_" class="redbtn">SEE DEMO</a>
 		</div>
 		<div class="col-md-6">
 			<img src="images/uploads/landing-light-version.png" alt="Light Version">

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Movie;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -22,4 +23,11 @@ class PageController extends Controller
     {
     	return view('frontend.commingsoon');
     }
+    public function movieFun($value='')
+    {
+        $movies =Movie::all();
+        return view ('frontend.movie',compact('movies'));
+    } 
+    
+
 }
