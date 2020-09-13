@@ -32,28 +32,31 @@
 <body>
 <!--preloading-->
 <div id="preloader">
-     <img class="logo" src="{{ asset('images/d4.jpg')}}" alt="" width="150" height="70"><span></span>
+     <img class="logo" src="{{ asset('images/logoab.png')}}" alt="" width="150" height="70">
+     <div id="status">
         <span></span>
+        <span></span>
+    </div>
     </div>
 </div>
 <!--end of preloading-->
 <!--login form popup-->
-<div class="login-wrapper" id="login-content">
+{{-- <div class="login-wrapper" id="login-content">
     <div class="login-content">
         <a href="#" class="close">x</a>
         <h3>Login</h3>
-        <form method="post" action="#">
+        <form method="post" action="{{ route('login') }}">
         	<div class="row">
         		 <label for="username">
-                    Username:
-                    <input type="text" name="username" id="username" placeholder="Hugh Jackman" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{8,20}$" required="required" />
+                    Email:
+                    <input class="form-control py-4" id="inputEmailAddress" type="email" placeholder="Enter email address" name="email" />
                 </label>
         	</div>
            
             <div class="row">
             	<label for="password">
                     Password:
-                    <input type="password" name="password" id="password" placeholder="******" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required="required" />
+                    <input class="form-control py-4" id="inputPassword" type="password" placeholder="Enter password" name="password" />
                 </label>
             </div>
             <div class="row">
@@ -76,37 +79,39 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 <!--end of login form popup-->
-<!--signup form popup-->
-<div class="login-wrapper"  id="signup-content">
+{{-- signup form popup  --}}
+{{-- <div class="login-wrapper"  id="signup-content">
     <div class="login-content">
         <a href="#" class="close">x</a>
         <h3>sign up</h3>
-        <form method="post" action="#">
-            <div class="row">
+        <form method="post" action="{{ route('register') }}">
+            <div class="row">                                                                                                                                  
                  <label for="username-2">
                     Username:
-                    <input type="text" name="username" id="username-2" placeholder="Hugh Jackman" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{8,20}$" required="required" />
+                    <input class="form-control py-4" id="inputName" type="text" placeholder="Enter Name" name="name" />
                 </label>
             </div>
            
             <div class="row">
                 <label for="email-2">
                     your email:
-                    <input type="password" name="email" id="email-2" placeholder="" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required="required" />
+                    <input class="form-control py-4" id="inputEmailAddress" type="email" aria-describedby="emailHelp" placeholder="Enter email address" name="email" />
                 </label>
             </div>
              <div class="row">
                 <label for="password-2">
                     Password:
-                    <input type="password" name="password" id="password-2" placeholder="" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required="required" />
+                    <input class="form-control py-4" id="inputPassword" type="password" placeholder="Enter password" name="password" />
+                    <font id="error" color="red"></font>
                 </label>
             </div>
              <div class="row">
                 <label for="repassword-2">
                     re-type Password:
-                    <input type="password" name="password" id="repassword-2" placeholder="" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required="required" />
+                    <input class="form-control py-4" id="inputConfirmPassword" type="password" placeholder="Confirm password" name="password_confirmation" />
+                              <font id="cerror" color="red"></font>
                 </label>
             </div>
            <div class="row">
@@ -114,7 +119,7 @@
            </div>
         </form>
     </div>
-</div>
+</div> --}}
 <!--end of signup form popup-->
 
 <!-- BEGIN | Header -->
@@ -131,7 +136,7 @@
 							<span></span>
 						</div>
 				    </div>
-				    <a href="index-2.html"><img class="logo" src="{{ asset('images/d4.jpg')}}" alt="" width="150" height="60"></a>
+				    <a href="index-2.html"><img class="logo" src="{{ asset('images/logoab.png')}}" alt="" width="150" height="80"></a>
 			    </div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse flex-parent" id="bs-example-navbar-collapse-1">
@@ -236,8 +241,36 @@
 							</ul>
 						</li>                
 						<li><a href="#">Help</a></li>
-						<li class="loginLink"><a href="#">LOG In</a></li>
-						<li class="btn signupLink"><a href="#">sign up</a></li>
+						{{-- <div class="col-lg-4 col-10">
+						<a href="{{route('registerpage')}}" class="d-xl-block d-lg-block d-md-block d-none  text-decoration-none loginLink float-right">|Sign-up</a>
+						<a href="{{route('loginpage')}}" class="d-xl-block d-lg-block d-md-block d-none  text-decoration-none loginLink float-right">Login</a>
+						<ul class="navbar-nav ml-auto"> --}}
+							<!-- Authentication Links -->
+							@role('User')
+							<span classs="float-right d-xl-block d-lg-block d-md-block d-none">
+								<a id="navbarDropdown" class=" btn btn-warning nav-link dropdown-toggle loginLink" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+									{{ Auth::user()->name }}
+								</a>
+
+								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<a class="dropdown-item" href="{{ route('logout') }}"
+									onclick="event.preventDefault();
+									document.getElementById('logout-form').submit();">
+									{{ __('Logout') }}
+								</a>
+
+								<form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+									@csrf
+								</form>
+							</div>
+						</span>
+						@else
+						<span classs="float-right d-xl-block d-lg-block d-md-block d-none">
+							<li class=""><a href="{{ route('loginpage')}}">Log In</a></li>
+						<li class=""><a href="{{ route('signuppage')}}" class="text-danger">sign up</a></li>
+						</span>
+						@endrole	
+					{{-- </div> --}}
 					</ul>
 				</div>
 			<!-- /.navbar-collapse -->

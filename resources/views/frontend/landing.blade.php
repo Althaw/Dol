@@ -1,7 +1,7 @@
 @extends('frontend')
 @section('maincontent')
 <div class="landing-hero">
-	<img src="images/d4.jpg" alt="Logo"width="150" height="130">
+	{{-- <img src="images/d4.jpg" alt="Logo"width="150" height="130"> --}}
 	<div class="row landing-hero-text">
 		<h2>MOST COMPLETED</h2>
 		<h2 class="text-yellow">FILM REVIEW  &middot;  MOVIE DATABASE</h2>

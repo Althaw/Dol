@@ -15,9 +15,9 @@ use Illuminate\Support\Facades\Route;
 
 
 //backend
+Route::middleware('role:Admin')->group(function ()
+{
 Route::get('dashboard','BackendController@dashboardfun')->name('dashboardpage');
-
-
 Route::resource('movies','MovieController');
 
 Route::resource('actors','ActorController');
@@ -25,6 +25,10 @@ Route::resource('actors','ActorController');
 Route::resource('directors','DirectorController');
 
 Route::resource('genres','GenresController');
+});
+
+
+
 
 
 
@@ -37,3 +41,11 @@ Route::get('comming','PageController@commingfun')->name('commingpage');
 Route::get('comming','PageController@commingfun')->name('commingpage');
 Route::get('movie','PageController@moviefun')->name('moviepage');
 
+Route::get('loginform','PageController@loginfun')->name('loginpage');
+
+Route::get('signup','PageController@signupfun')->name('signuppage');
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

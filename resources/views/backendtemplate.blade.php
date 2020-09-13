@@ -307,7 +307,7 @@
             <!-- Nav Item - User Information -->
            {{--  <li class="nav-item dropdown no-arrow"> --}}
               {{-- <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> --}}
-                {{-- <span class="mr-2 d-none d-lg-inline text-gray-600 small"><div class="col-lg-4 col-10">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><div class="col-lg-4 col-10">
               @role('Admin')
               <span classs="float-right d-xl-block d-lg-block d-md-block d-none">
                 <a id="navbarDropdown" class="nav-link dropdown-toggle loginLink" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -328,11 +328,11 @@
             </span>
             @else
             <span classs="float-right d-xl-block d-lg-block d-md-block d-none">
-              <a href="{{route('loginpage')}}" class="text-decoration-none loginLink"> Login </a> | <a href="{{route('registerpage')}}" class="text-decoration-none loginLink"> Sign-up </a>
+              <a href="{{route('loginpage')}}" class="text-decoration-none loginLink"> Login </a> | <a href="{{route('signuppage')}}" class="text-decoration-none loginLink"> Sign-up </a>
             </span>
             @endrole  
           </div></span>
-              </a> --}}
+              </a>
               <!-- Dropdown - User Information -->
              {{--  <div class="dropdown-menu dropdown-menu-right shadow animatedgrow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="#">

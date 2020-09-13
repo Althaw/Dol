@@ -113,7 +113,7 @@ class ActorController extends Controller
     {
         $actors=Actor::find($id);
 
-        $actor->delete();
+        $actors->delete();
         return redirect()->route('actors.index');
     }
 }

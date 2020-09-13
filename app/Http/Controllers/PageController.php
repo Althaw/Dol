@@ -28,6 +28,14 @@ class PageController extends Controller
         $movies =Movie::all();
         return view ('frontend.movie',compact('movies'));
     } 
+    public function loginfun($value='')
+    {
+        return view('frontend.login');
+    }
+    public function signupfun($value='')
+    {
+        return view('frontend.register');
+    }
     
 
 }
