@@ -163,15 +163,9 @@
 							Movie Type<i class="fa fa-angle-down" aria-hidden="true"></i>
 							</a>
 							<ul class="dropdown-menu level1">
-								<li><a href="">Action</a></li>
-								<li><a href="">Adventure </a></li>
-								<li><a href="">Animation</a></li>
-								<li><a href="">Bollywood</a></li>
-								<li><a href="">Crime</a></li>
-								<li><a href="">Comedy</a></li>
-								<li><a href="">Drama</a></li>
-								<li><a href="">Funny</a></li>
-								
+								@foreach($genres as $genre)
+								<li><a href="{{ route('typepage',$genre->id)}}">{{$genre->title}}</a></li>
+								@endforeach
 							</ul>
 						</li>
 
@@ -201,10 +195,9 @@
 							celebrities <i class="fa fa-angle-down" aria-hidden="true"></i>
 							</a>
 							<ul class="dropdown-menu level1">
-								<li><a href="celebritygrid01.html">celebrity grid 01</a></li>
-								<li><a href="celebritygrid02.html">celebrity grid 02 </a></li>
-								<li><a href="celebritylist.html">celebrity list</a></li>
-								<li class="it-last"><a href="celebritysingle.html">celebrity single</a></li>
+								@foreach($actors as $actor)
+								<li><a href="{{ route('celepage',$actor->id)}}">{{$actor->name}}</a></li>
+								@endforeach
 							</ul>
 						</li>
 						 {{-- <li class="dropdown first">
@@ -296,7 +289,7 @@
 	<div class="container">
 		<div class="flex-parent-ft">
 			<div class="flex-child-ft item1">
-				 <a href="index-2.html"><img class="logo" src="{{ asset('images/d4.jpg')}}" alt="" width="150" height="70"></a>
+				 <a href="index-2.html"><img class="logo" src="{{ asset('images/logoab.png')}}" alt="" width="150" height="70"></a>
 				 <p>5th Avenue st, manhattan<br>
 				New York, NY 10001</p>
 				<p>Call us: <a href="#">(+01) 202 342 6789</a></p>

@@ -3,38 +3,74 @@
 namespace App\Http\Controllers;
 
 use App\Movie;
+use App\Actor;
+use App\Genres;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
     public function indexfun($value='')
     {
-    	return view('frontend.master');
+        $actors=Actor::all();
+        $genres=Genres::all();
+        $movies=Movie::all();
+    	return view('frontend.master',compact('genres','actors','movies'));
     }
-    public function detailfun($value='')
+    public function detailfun($id)
     {
-    	return view('frontend.movie_detail');
+        $genres=Genres::all();
+        $actors=Actor::all();
+        $movie=Movie::find($id);
+    	return view('frontend.movie_detail',compact('movie','genres','actors'));
+    }
+    public function typefun($id)
+    {
+        $movies=Movie::all();
+        $actors=Actor::all();
+        $genre=Genres::find($id);
+        return view('frontend.movie_type',compact('genre','movies','actors'));
+    }
+    public function celefun($value='')
+    {
+        $actors=Actor::all();
+        $genres=Genres::all();
+        $movies=Movie::all();
+        return view('frontend.cele',compact('movies','genres','actors'));
     }
     public function landingfun($value='')
     {
-    	return view('frontend.landing');
+        $actors=Actor::all();
+        $genres=Genres::all();
+        $movies=Movie::all();
+    	return view('frontend.landing',compact('movies','genres','actors'));
     }
     public function commingfun($value='')
     {
-    	return view('frontend.commingsoon');
+        $actors=Actor::all();
+        $genres=Genres::all();
+        $movies=Movie::all();
+    	return view('frontend.commingsoon',compact('movies','genres','actors'));
     }
     public function movieFun($value='')
     {
-        $movies =Movie::all();
-        return view ('frontend.movie',compact('movies'));
+        $actors=Actor::all();
+        $genres=Genres::all();
+        $movies=Movie::all();
+        return view ('frontend.movie',compact('movies','actors','genres'));
     } 
     public function loginfun($value='')
     {
-        return view('frontend.login');
+        $actors=Actor::all();
+        $genres=Genres::all();
+        $movies=Movie::all();
+        return view('frontend.login',compact('movies','genres','actors'));
     }
     public function signupfun($value='')
     {
-        return view('frontend.register');
+        $actors=Actor::all();
+        $genres=Genres::all();
+        $movies=Movie::all();
+        return view('frontend.register',compact('movies','genres','actors'));
     }
     
 

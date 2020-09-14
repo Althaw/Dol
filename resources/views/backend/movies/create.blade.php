@@ -30,7 +30,7 @@
     <div class="col-md-12">
       <select class="form-control form-control-md" id="inpurBrand" name="director">
         @foreach ($directors as $director)
-        <option value="{{ $director->name }}">{{$director->name}}</option>
+        <option value="{{ $director->id }}">{{$director->name}}</option>
         @endforeach
       </select>
     </div>      
@@ -43,7 +43,7 @@
     <div class="col-md-12">
       <select id="genre" name="genre[]" class="form-control select2" multiple="multiple">   
     @foreach($genres as $genre)
-    <option value="{{$genre->title}}">{{$genre->title}}</option>
+    <option value="{{$genre->id}}">{{$genre->title}}</option>
     @endforeach
   </select>
     </div>   
@@ -64,7 +64,7 @@
     <label for="validationDefault02">Stars</label>
     <select id="star" name="star[]" class="form-control select2" multiple="multiple">       
     @foreach($actors as $actor)
-    <option value="{{$actor->name}}">{{$actor->name}}</option>
+    <option value="{{$actor->id}}">{{$actor->name}}</option>
     @endforeach
   </select>
      {{--  <select id="framework" name="star[]" multiple class="form-control" >

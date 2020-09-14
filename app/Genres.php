@@ -10,7 +10,7 @@ class Genres extends Model
 
     public function movies($value='')
     {
-    	 return $this->belongsTOMany('App\Movie','movie_genre')
+    	 return $this->belongsTOMany('App\Movie','movie_genres')
     	              ->withTimestamps();
     }
 }

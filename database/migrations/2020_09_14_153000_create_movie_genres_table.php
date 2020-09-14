@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMovieGenreTable extends Migration
+class CreateMovieGenresTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateMovieGenreTable extends Migration
      */
     public function up()
     {
-        Schema::create('movie_genre', function (Blueprint $table) {
+        Schema::create('movie_genres', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('movie_id');
-            $table->unsignedBigInteger('genre_id');
+            $table->unsignedBigInteger('genres_id');
             $table->timestamps();
 
             $table->foreign('movie_id')
@@ -24,7 +24,7 @@ class CreateMovieGenreTable extends Migration
                     ->on('movies')
                     ->onDelete('cascade');
 
-            $table->foreign('genre_id')
+            $table->foreign('genres_id')
                     ->references('id')
                     ->on('genres')
                     ->onDelete('cascade');
@@ -38,6 +38,6 @@ class CreateMovieGenreTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('movie_genre');
+        Schema::dropIfExists('movie_genres');
     }
 }

@@ -43,7 +43,7 @@ class MovieController extends Controller
     public function store(Request $request)
     {
         //dd($request);
-        // $stars=json_decode($request->star);//array to string conversion
+        //$cartArr=json_decode($request);//array to string conversion
         // dd($stars);
         // Validation
         $request->validate([
@@ -91,7 +91,26 @@ class MovieController extends Controller
             $movie->release_country=$request->country;
             $movie->rating=$request->rating;
             $movie->save();
-            //$movie->actors()->attach($actors);
+            //$genre=Genres::all();
+            foreach ($request->genre as $genre) {
+                $movie->genres()->attach($genre);
+            }
+            foreach ($request->star as $star) {
+                $movie->actors()->attach($star);
+            }
+            
+    
+
+           
+           
+
+
+            // $diplome->users()->attach($user, ['etablissement'=> 'bib',
+            //                                 'annee'=>'2015',
+            //                                 'mention'=>'AB',
+            //                                 ]);
+     
+           
 
         //redirect
             return redirect()->route('movies.index');

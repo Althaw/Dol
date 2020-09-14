@@ -18,14 +18,14 @@
 		<div class="row ipad-width2">
 			<div class="col-md-4 col-sm-12 col-xs-12">
 				<div class="movie-img sticky-sb">
-					<img src="images/uploads/movie-single.jpg" alt="">
+					<img src="{{ asset($movie->photo)}}" class="img-fluid">
 					<div class="movie-btn">	
 						<div class="btn-transform transform-vertical red">
 							<div><a href="#" class="item item-1 redbtn"> <i class="ion-play"></i> Watch Trailer</a></div>
 							<div><a href="https://www.youtube.com/embed/o-0hcF97wy0" class="item item-2 redbtn fancybox-media hvr-grow"><i class="ion-play"></i></a></div>
 						</div>
 						<div class="btn-transform transform-vertical">
-							<div><a href="#" class="item item-1 yellowbtn"> <i class="ion-card"></i> Buy ticket</a></div>
+							<div><a href="#" class="item item-1 yellowbtn"> <i class="ion-card"></i>Download</a></div>
 							<div><a href="#" class="item item-2 yellowbtn"><i class="ion-card"></i></a></div>
 						</div>
 					</div>
@@ -33,7 +33,7 @@
 			</div>
 			<div class="col-md-8 col-sm-12 col-xs-12">
 				<div class="movie-single-ct main-content">
-					<h1 class="bd-hd">Skyfall: Quantum of Spectre <span>2015</span></h1>
+					<h1 class="bd-hd">{{$movie->name}}<span>{{$movie->year}}</span></h1>
 					<div class="social-btn">
 						<a href="#" class="parent-btn"><i class="ion-heart"></i> Add to Favorite</a>
 						<div class="hover-bnt">
@@ -49,7 +49,7 @@
 					<div class="movie-rate">
 						<div class="rate">
 							<i class="ion-android-star"></i>
-							<p><span>8.1</span> /10<br>
+							<p><span>{{$movie->rating}}</span> /10<br>
 								<span class="rv">56 Reviews</span>
 							</p>
 						</div>
@@ -79,7 +79,7 @@
 						        <div id="overview" class="tab active">
 						            <div class="row">
 						            	<div class="col-md-8 col-sm-12 col-xs-12">
-						            		<p>Tony Stark creates the Ultron Program to protect the world, but when the peacekeeping program becomes hostile, The Avengers go into action to try and defeat a virtually impossible enemy together. Earth's mightiest heroes must come together once again to protect the world from global extinction.</p>
+						            		<p>{{$movie->review}}</p>
 						            		<div class="title-hd-sm">
 												<h4>Videos & Photos</h4>
 												<a href="#" class="time">All 5 Videos & 245 Photos <i class="ion-ios-arrow-right"></i></a>
