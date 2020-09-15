@@ -30,12 +30,12 @@ class PageController extends Controller
         $genre=Genres::find($id);
         return view('frontend.movie_type',compact('genre','movies','actors'));
     }
-    public function celefun($value='')
+    public function celefun($id)
     {
-        $actors=Actor::all();
+        $actor=Actor::find($id);
         $genres=Genres::all();
         $movies=Movie::all();
-        return view('frontend.cele',compact('movies','genres','actors'));
+        return view('frontend.cele',compact('movies','genres','actor'));
     }
     public function landingfun($value='')
     {
@@ -44,12 +44,12 @@ class PageController extends Controller
         $movies=Movie::all();
     	return view('frontend.landing',compact('movies','genres','actors'));
     }
-    public function commingfun($value='')
+    public function commingfun($id)
     {
         $actors=Actor::all();
         $genres=Genres::all();
-        $movies=Movie::all();
-    	return view('frontend.commingsoon',compact('movies','genres','actors'));
+        $movie=Movie::find($id);
+    	return view('frontend.commingsoon',compact('movie','genres','actors'));
     }
     public function movieFun($value='')
     {

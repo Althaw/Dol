@@ -136,17 +136,17 @@
 							<span></span>
 						</div>
 				    </div>
-				    <a href="index-2.html"><img class="logo" src="{{ asset('images/logoab.png')}}" alt="" width="150" height="80"></a>
+				    <a href="{{route('homepage')}}"><img class="logo" src="{{ asset('images/logoab.png')}}" alt="" width="150" height="80"></a>
 			    </div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse flex-parent" id="bs-example-navbar-collapse-1">
+				<div class="collapse navbar-collapse flex-parent tab-content" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav flex-child-menu menu-left">
 						<li class="hidden">
 							<a href="#page-top"></a>
 						</li>
 						<li class="dropdown first">
 							
-							<a class="nav-item nav-link  text-white mx-3" href="{{ route('moviepage')}}">Movies</a>
+							<a class="nav-item nav-link  text-white mx-3 active" href="{{ route('moviepage')}}">Movies</a>
 								
 
 
@@ -230,7 +230,10 @@
 							<ul class="dropdown-menu level1">
 								<li><a href="{{ route('landingpage')}}">Landing</a></li>
 								 {{-- <li><a href="404.html">404 Page</a></li>  --}}
-								<li class="it-last"><a href="{{ route('commingpage')}}">Coming soon</a></li>
+								 @foreach($movies as $movie)
+								<li class="it-last"><a href="{{ route('commingpage',$movie->id)}}">Coming soon</a></li>
+								@endforeach
+
 							</ul>
 						</li>                
 						<li><a href="#">Help</a></li>
@@ -290,18 +293,18 @@
 		<div class="flex-parent-ft">
 			<div class="flex-child-ft item1">
 				 <a href="index-2.html"><img class="logo" src="{{ asset('images/logoab.png')}}" alt="" width="150" height="70"></a>
-				 <p>5th Avenue st, manhattan<br>
-				New York, NY 10001</p>
+				 <p>Yandanar st, SanChaung<br>
+				Yangon</p>
 				<p>Call us: <a href="#">(+01) 202 342 6789</a></p>
 			</div>
 			<div class="flex-child-ft item2">
 				<h4>Resources</h4>
 				<ul>
-					<li><a href="#">About</a></li> 
-					<li><a href="#">Blockbuster</a></li>
+					<li><a href="{{route('homepage')}}">About</a></li> 
+					<li><a href="{{route('homepage')}}">Dolphin Channel</a></li>
 					<li><a href="#">Contact Us</a></li>
-					<li><a href="#">Forums</a></li>
-					<li><a href="#">Blog</a></li>
+					{{-- <li><a href="#">Forums</a></li>
+					<li><a href="#">Blog</a></li> --}}
 					<li><a href="#">Help Center</a></li>
 				</ul>
 			</div>
@@ -316,7 +319,7 @@
 			<div class="flex-child-ft item4">
 				<h4>Account</h4>
 				<ul>
-					<li><a href="#">My Account</a></li> 
+					{{-- <li><a href="#">My Account</a></li>  --}}
 					<li><a href="#">Watchlist</a></li>	
 					<li><a href="#">Collections</a></li>
 					<li><a href="#">User Guide</a></li>
@@ -333,9 +336,9 @@
 		</div>
 	</div>
 	<div class="ft-copyright">
-		<div class="ft-left">
+		{{-- <div class="ft-left">
 			<p><a target="_blank" href="https://www.templateshub.net">Templates Hub</a></p>
-		</div>
+		</div> --}}
 		<div class="backtotop">
 			<p><a href="#" id="back-to-top">Back to top  <i class="ion-ios-arrow-thin-up"></i></a></p>
 		</div>

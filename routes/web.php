@@ -45,9 +45,7 @@ Route::get('cele/{id}','PageController@celefun')->name('celepage');
 
 Route::get('landing','PageController@landingfun')->name('landingpage');
 
-Route::get('comming','PageController@commingfun')->name('commingpage');
-
-Route::get('comming','PageController@commingfun')->name('commingpage');
+Route::get('comming/{id}','PageController@commingfun')->name('commingpage');
 
 Route::get('movie','PageController@moviefun')->name('moviepage');
 
