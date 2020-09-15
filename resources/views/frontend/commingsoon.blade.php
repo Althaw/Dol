@@ -7,8 +7,9 @@
 				<a href="index-2.html"><img class="md-logo" src="#" alt=""></a>
 				<h1>Coming soon</h1>
 				<p>We are working hard to get back to you in</p>
-				<a href="http://www.youtube.com/" class="btn btn-danger">Trailer</a>
-				<a href="{{$movie->link}}" class="btn btn-warning">Download Link</a>
+				<a href="http://www.youtube.com/" class="btn btn-danger"><img src="{{ asset('images/btn1.png')}}" width="130" height="90"></a>
+				<a href="{{$movie->link}}" class="btn btn-danger"><img src="{{ asset('images/btn.png')}}" width="150" height="100"></a>
+				<hr>
 				<div class="row">
 					<div class="col-md-6 col-sm-12 col-xs-12">
 						<div class="coming-ct">

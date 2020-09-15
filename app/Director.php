@@ -10,6 +10,6 @@ protected $fillable=['name'];
 
     public function movies($value='')
     {
-    	 return $this->belongsTO('App\Movie');
+    	 return $this->belongsTo('App\Movie');
     }
 }

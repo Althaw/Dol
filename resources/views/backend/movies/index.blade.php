@@ -16,7 +16,6 @@
 						<th>Photo</th>
 						<th>Director</th>
 						<th>Genres</th>
-						<th>Link</th>
 						<th>Stars</th>
 						<th>Action</th>
 				</thead>
@@ -30,7 +29,7 @@
 						<td><img src="{{ asset($movie->photo)}}" width="100" height="120"></td>
 						<td>{{$movie->director}}</td>
 						<td>{{$movie->genre}}</td>
-						<td>{{$movie->link}}</td>
+						{{-- <td>{{$movie->link}}</td> --}}
 						<td>{{$movie->stars}}</td>
 						<td>
 						<a href="" class="btn btn-info">Detail</a>

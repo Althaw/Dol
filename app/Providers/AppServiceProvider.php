@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\view;
 use App\Genres;
 use App\Actor;
 use App\Movie;
+use App\Director;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -33,6 +34,8 @@ class AppServiceProvider extends ServiceProvider
         view::share('genres',$genres);
         $actors=Actor::all();
         view::share('actors',$actors);
+        $directors=Director::all();
+        view::share('directors',$directors);
         $movies=Movie::all();
         view::share('movies',$movies);
     }

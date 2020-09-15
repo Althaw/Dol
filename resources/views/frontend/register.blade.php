@@ -19,16 +19,13 @@
 				</div>
 				<div class="col-md-6">
 					<div class="form-group">
-						<label class="small mb-1" for="phone">Phone Number</label>
-						<input class="form-control py-4" id="phone" type="text" placeholder="Enter Phone Number" name="phone" />
-					</div>
-				</div>
-			</div>
-
-			<div class="form-group">
 				<label class="small mb-1" for="inputEmailAddress">Email</label>
 				<input class="form-control py-4" id="inputEmailAddress" type="email" aria-describedby="emailHelp" placeholder="Enter email address" name="email" />
 			</div>
+				</div>
+			</div>
+
+			
 			<div class="form-row">
 				<div class="col-md-6">
 					<div class="form-group">
@@ -48,12 +45,12 @@
 				</div>
 			</div>
 
-			<div class="form-group">
+			{{-- <div class="form-group">
 				<label class="small mb-1" for="address"> Address </label>
 				<textarea class="form-control" name="address"></textarea>
-			</div>
+			</div> --}}
 
-			<div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
+			<div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0 ml-5">
 
 				<button type="submit" class="btn btn-secondary mainfullbtncolor btn-block"> Create Account </button>
 			</div>

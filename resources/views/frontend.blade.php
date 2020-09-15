@@ -37,91 +37,8 @@
         <span></span>
         <span></span>
     </div>
-    </div>
 </div>
-<!--end of preloading-->
-<!--login form popup-->
-{{-- <div class="login-wrapper" id="login-content">
-    <div class="login-content">
-        <a href="#" class="close">x</a>
-        <h3>Login</h3>
-        <form method="post" action="{{ route('login') }}">
-        	<div class="row">
-        		 <label for="username">
-                    Email:
-                    <input class="form-control py-4" id="inputEmailAddress" type="email" placeholder="Enter email address" name="email" />
-                </label>
-        	</div>
-           
-            <div class="row">
-            	<label for="password">
-                    Password:
-                    <input class="form-control py-4" id="inputPassword" type="password" placeholder="Enter password" name="password" />
-                </label>
-            </div>
-            <div class="row">
-            	<div class="remember">
-					<div>
-						<input type="checkbox" name="remember" value="Remember me"><span>Remember me</span>
-					</div>
-            		<a href="#">Forget password ?</a>
-            	</div>
-            </div>
-           <div class="row">
-           	 <button type="submit">Login</button>
-           </div>
-        </form>
-        <div class="row">
-        	<p>Or via social</p>
-            <div class="social-btn-2">
-            	<a class="fb" href="#"><i class="ion-social-facebook"></i>Facebook</a>
-            	<a class="tw" href="#"><i class="ion-social-twitter"></i>twitter</a>
-            </div>
-        </div>
-    </div>
-</div> --}}
-<!--end of login form popup-->
-{{-- signup form popup  --}}
-{{-- <div class="login-wrapper"  id="signup-content">
-    <div class="login-content">
-        <a href="#" class="close">x</a>
-        <h3>sign up</h3>
-        <form method="post" action="{{ route('register') }}">
-            <div class="row">                                                                                                                                  
-                 <label for="username-2">
-                    Username:
-                    <input class="form-control py-4" id="inputName" type="text" placeholder="Enter Name" name="name" />
-                </label>
-            </div>
-           
-            <div class="row">
-                <label for="email-2">
-                    your email:
-                    <input class="form-control py-4" id="inputEmailAddress" type="email" aria-describedby="emailHelp" placeholder="Enter email address" name="email" />
-                </label>
-            </div>
-             <div class="row">
-                <label for="password-2">
-                    Password:
-                    <input class="form-control py-4" id="inputPassword" type="password" placeholder="Enter password" name="password" />
-                    <font id="error" color="red"></font>
-                </label>
-            </div>
-             <div class="row">
-                <label for="repassword-2">
-                    re-type Password:
-                    <input class="form-control py-4" id="inputConfirmPassword" type="password" placeholder="Confirm password" name="password_confirmation" />
-                              <font id="cerror" color="red"></font>
-                </label>
-            </div>
-           <div class="row">
-             <button type="submit">sign up</button>
-           </div>
-        </form>
-    </div>
-</div> --}}
 <!--end of signup form popup-->
-
 <!-- BEGIN | Header -->
 <header class="ht-header">
 	<div class="container">
@@ -147,14 +64,7 @@
 						<li class="dropdown first">
 							
 							<a class="nav-item nav-link  text-white mx-3 active" href="{{ route('moviepage')}}">Movies</a>
-								
 
-
-							 {{-- <ul class="dropdown-menu level1">
-								<li><a href="index-2.html">Series</a></li>
-								<li><a href="homev2.html">Home 02</a></li>
-								<li><a href="homev3.html">Home 03</a></li>
-							</ul>  --}}
 						</li>
 
 
@@ -169,27 +79,6 @@
 							</ul>
 						</li>
 
-
-
-					{{-- 	 <li class="dropdown first">
-							<a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" data-hover="dropdown">
-							mo<i class="fa fa-angle-down" aria-hidden="true"></i>
-							</a>
-							<ul class="dropdown-menu level1">
-								<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown" >Movie grid<i class="ion-ios-arrow-forward"></i></a>
-									<ul class="dropdown-menu level2">
-										<li><a href="moviegrid.html">Movie grid</a></li>
-										<li><a href="moviegridfw.html">movie grid full width</a></li>
-									</ul>
-								</li>			
-								<li><a href="movielist.html">Movie list</a></li>
-								<li><a href="moviesingle.html">Movie single</a></li>
-								<li class="it-last"><a href="seriessingle.html">Series single</a></li>
-							</ul>
-						</li>  --}}
-
-  
 						<li class="dropdown first">
 							<a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" data-hover="dropdown">
 							celebrities <i class="fa fa-angle-down" aria-hidden="true"></i>
@@ -200,51 +89,12 @@
 								@endforeach
 							</ul>
 						</li>
-						 {{-- <li class="dropdown first">
-							<a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" data-hover="dropdown">
-							news <i class="fa fa-angle-down" aria-hidden="true"></i>
-							</a>
-							<ul class="dropdown-menu level1">
-								<li><a href="bloglist.html">blog List</a></li>
-								<li><a href="bloggrid.html">blog Grid</a></li>
-								<li class="it-last"><a href="blogdetail.html">blog Detail</a></li>
-							</ul>
-						</li> --}}
-						{{-- <li class="dropdown first">
-							<a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" data-hover="dropdown">
-							community <i class="fa fa-angle-down" aria-hidden="true"></i>
-							</a>
-							<ul class="dropdown-menu level1">
-								<li><a href="userfavoritegrid.html">user favorite grid</a></li>
-								<li><a href="userfavoritelist.html">user favorite list</a></li>
-								<li><a href="userprofile.html">user profile</a></li>
-								<li class="it-last"><a href="userrate.html">user rate</a></li>
-							</ul>
-						</li> --}}
 					</ul> 
 					<ul class="nav navbar-nav flex-child-menu menu-right">
-						<li class="dropdown first">
-							<a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" data-hover="dropdown">
-							pages <i class="fa fa-angle-down" aria-hidden="true"></i>
-							</a>
-							<ul class="dropdown-menu level1">
-								<li><a href="{{ route('landingpage')}}">Landing</a></li>
-								 {{-- <li><a href="404.html">404 Page</a></li>  --}}
-								 @foreach($movies as $movie)
-								<li class="it-last"><a href="{{ route('commingpage',$movie->id)}}">Coming soon</a></li>
-								@endforeach
-
-							</ul>
-						</li>                
-						<li><a href="#">Help</a></li>
-						{{-- <div class="col-lg-4 col-10">
-						<a href="{{route('registerpage')}}" class="d-xl-block d-lg-block d-md-block d-none  text-decoration-none loginLink float-right">|Sign-up</a>
-						<a href="{{route('loginpage')}}" class="d-xl-block d-lg-block d-md-block d-none  text-decoration-none loginLink float-right">Login</a>
-						<ul class="navbar-nav ml-auto"> --}}
-							<!-- Authentication Links -->
+						
 							@role('User')
 							<span classs="float-right d-xl-block d-lg-block d-md-block d-none">
-								<a id="navbarDropdown" class=" btn btn-warning nav-link dropdown-toggle loginLink" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+								<a id="navbarDropdown" class="nav-link dropdown-toggle loginLink" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
 									{{ Auth::user()->name }}
 								</a>
 
@@ -262,10 +112,11 @@
 						</span>
 						@else
 						<span classs="float-right d-xl-block d-lg-block d-md-block d-none">
-							<li class=""><a href="{{ route('loginpage')}}">Log In</a></li>
-						<li class=""><a href="{{ route('signuppage')}}" class="text-danger">sign up</a></li>
+							<li class=""><a href="{{route('loginpage')}}"> Login </a>&nbsp;&nbsp;&nbsp;&nbsp;
+							<a href="{{route('signuppage')}}"> Sign-up </a></li>
 						</span>
-						@endrole	
+						@endrole
+							
 					{{-- </div> --}}
 					</ul>
 				</div>
@@ -311,8 +162,8 @@
 			<div class="flex-child-ft item3">
 				<h4>Legal</h4>
 				<ul>
-					<li><a href="#">Terms of Use</a></li> 
-					<li><a href="#">Privacy Policy</a></li>	
+					<li><a href="https://megaup.net/terms.html">Terms of Use</a></li> 
+					<li><a href="https://megaup.net/terms.html">Privacy Policy</a></li>	
 					<li><a href="#">Security</a></li>
 				</ul>
 			</div>
@@ -336,9 +187,6 @@
 		</div>
 	</div>
 	<div class="ft-copyright">
-		{{-- <div class="ft-left">
-			<p><a target="_blank" href="https://www.templateshub.net">Templates Hub</a></p>
-		</div> --}}
 		<div class="backtotop">
 			<p><a href="#" id="back-to-top">Back to top  <i class="ion-ios-arrow-thin-up"></i></a></p>
 		</div>

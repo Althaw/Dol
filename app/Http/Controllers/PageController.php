@@ -5,10 +5,16 @@ namespace App\Http\Controllers;
 use App\Movie;
 use App\Actor;
 use App\Genres;
+use App\Director;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
+    // public function __construct($value='')
+    // {
+    //     $this->middleware('role:Admin')->only('detailfun');
+    //     $this->middleware('role:User')->only('detailfun');
+    // }
     public function indexfun($value='')
     {
         $actors=Actor::all();
@@ -18,10 +24,11 @@ class PageController extends Controller
     }
     public function detailfun($id)
     {
-        $genres=Genres::all();
-        $actors=Actor::all();
+        $genre=Genres::find($id);
+        $actor=Actor::find($id);
+        $director=Director::find($id);
         $movie=Movie::find($id);
-    	return view('frontend.movie_detail',compact('movie','genres','actors'));
+    	return view('frontend.movie_detail',compact('movie','genre','actor','director'));
     }
     public function typefun($id)
     {
@@ -71,6 +78,13 @@ class PageController extends Controller
         $genres=Genres::all();
         $movies=Movie::all();
         return view('frontend.register',compact('movies','genres','actors'));
+    }
+     public function helpfun($value='')
+    {
+        $actors=Actor::all();
+        $genres=Genres::all();
+        $movies=Movie::all();
+        return view('frontend.help',compact('movies','genres','actors'));
     }
     
 

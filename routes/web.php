@@ -53,6 +53,8 @@ Route::get('loginform','PageController@loginfun')->name('loginpage');
 
 Route::get('signup','PageController@signupfun')->name('signuppage');
 
+Route::get('help','PageController@helpfun')->name('helppage');
+
 
 Auth::routes();
 
