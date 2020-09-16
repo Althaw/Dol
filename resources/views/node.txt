@@ -38,97 +38,6 @@
         <span></span>
     </div>
 </div>
-<div class="login-wrapper" id="login-content">
-    <div class="login-content">
-        <a href="#" class="close">x</a>
-        <h3>Login</h3>
-        <form method="POST" action="{{ route('login') }}">
-			@csrf
-			<div class="form-group">
-				<label class="small mb-1" for="inputEmailAddress">Email</label>
-				<input class="form-control py-4" id="inputEmailAddress" type="email" placeholder="Enter email address" name="email" />
-			</div>
-
-			<div class="form-group">
-				<label class="small mb-1" for="inputPassword">Password</label>
-				<input class="form-control py-4" id="inputPassword" type="password" placeholder="Enter password" name="password" />
-			</div>
-
-			<div class="form-group">
-				<div class="custom-control custom-checkbox">
-					<input class="custom-control-input" id="rememberPasswordCheck" type="checkbox" />
-					<label class="custom-control-label" for="rememberPasswordCheck">Remember password</label>
-				</div>
-				<a class="small" href="#">Forgot Password?</a><a href="#">Register!</a>
-			</div>
-			<div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
-				<button type="submit" class="btn btn-secondary mainfullbtncolor btn-block">Login</button>
-			</div>
-		</form>
-        <div class="row">
-        	<p>Or via social</p>
-            <div class="social-btn-2">
-            	<a class="fb" href="#"><i class="ion-social-facebook"></i>Facebook</a>
-            	<a class="tw" href="#"><i class="ion-social-twitter"></i>twitter</a>
-            </div>
-        </div>
-    </div>
-</div>
-<!--end of login form popup-->
-<!--signup form popup-->
-<div class="login-wrapper"  id="signup-content">
-    <div class="login-content">
-        <a href="#" class="close">x</a>
-        <h3>sign up</h3>
-        <form method="POST" action="{{ route('register') }}">
-			@csrf
-			<div class="form-row">
-				<div class="col-md-6">
-					<div class="form-group">
-						<label class="small mb-1" for="inputName"> Name</label>
-						<input class="form-control py-4" id="inputName" type="text" placeholder="Enter Name" name="name" />
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="form-group">
-				<label class="small mb-1" for="inputEmailAddress">Email</label>
-				<input class="form-control py-4" id="inputEmailAddress" type="email" aria-describedby="emailHelp" placeholder="Enter email address" name="email" />
-			</div>
-				</div>
-			</div>
-
-			
-			<div class="form-row">
-				<div class="col-md-6">
-					<div class="form-group">
-						<label class="small mb-1" for="inputPassword">Password</label>
-						<input class="form-control py-4" id="inputPassword" type="password" placeholder="Enter password" name="password" />
-						<font id="error" color="red"></font>
-					</div>
-
-				</div>
-				<div class="col-md-6">
-					<div class="form-group">
-						<label class="small mb-1" for="inputConfirmPassword">Confirm Password</label>
-						<input class="form-control py-4" id="inputConfirmPassword" type="password" placeholder="Confirm password" name="password_confirmation" />
-						<font id="cerror" color="red"></font>
-
-					</div>
-				</div>
-			</div>
-
-			{{-- <div class="form-group">
-				<label class="small mb-1" for="address"> Address </label>
-				<textarea class="form-control" name="address"></textarea>
-			</div> --}}
-
-			<div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0 ml-5">
-
-				<button type="submit" class="btn btn-secondary mainfullbtncolor btn-block"> Create Account </button>
-			</div>
-		</form>
-    </div>
-</div>
 <!--end of signup form popup-->
 <!-- BEGIN | Header -->
 <header class="ht-header">
@@ -185,12 +94,12 @@
 						
 							@role('User')
 							<span classs="float-right d-xl-block d-lg-block d-md-block d-none">
-								{{-- <a id="navbarDropdown" class="nav-link dropdown-toggle loginLink" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+								<a id="navbarDropdown" class="nav-link dropdown-toggle loginLink" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
 									{{ Auth::user()->name }}
-								</a> --}}
+								</a>
 
-								{{-- <div class="dropdown-menu" aria-labelledby="navbarDropdown"> --}}
-									<a class="btn text-light" href="{{ route('logout') }}"
+								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<a class="dropdown-item" href="{{ route('logout') }}"
 									onclick="event.preventDefault();
 									document.getElementById('logout-form').submit();">
 									{{ __('Logout') }}
@@ -199,12 +108,12 @@
 								<form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
 									@csrf
 								</form>
-							{{-- </div> --}}
+							</div>
 						</span>
 						@else
 						<span classs="float-right d-xl-block d-lg-block d-md-block d-none">
-							<li class="loginLink"><a href="#">LOG In</a></li>
-						<li class="signupLink"><a href="#">sign up</a></li>
+							<li class=""><a href="{{route('loginpage')}}"> Login </a>&nbsp;&nbsp;&nbsp;&nbsp;
+							<a href="{{route('signuppage')}}"> Sign-up </a></li>
 						</span>
 						@endrole
 							

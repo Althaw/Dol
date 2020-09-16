@@ -30,7 +30,7 @@
     <div class="col-md-12">
       <select class="form-control form-control-md" id="inpurBrand" name="director">
         @foreach ($directors as $director)
-        <option value="{{ $director->id }}">{{$director->name}}</option>
+        <option value="{{ $director->name }}">{{$director->name}}</option>
         @endforeach
       </select>
     </div>      

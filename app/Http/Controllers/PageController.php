@@ -20,7 +20,8 @@ class PageController extends Controller
         $actors=Actor::all();
         $genres=Genres::all();
         $movies=Movie::all();
-    	return view('frontend.master',compact('genres','actors','movies'));
+        $directors=Director::all();
+    	return view('frontend.master',compact('genres','actors','movies','directors'));
     }
     public function detailfun($id)
     {

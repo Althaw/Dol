@@ -120,17 +120,34 @@
 
       <!-- Nav Item - Charts -->
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{{route('genres.index')}}">
           <i class="fas fa-fw fa-chart-area"></i>
-          <span>Movie</span></a>
+          <span>Genres</span></a>
       </li>
+       <li class="nav-item">
+        <a class="nav-link" href="{{route('actors.index')}}">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Actors</span></a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="{{route('directors.index')}}">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Directors</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{route('movies.index')}}">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Movies</span></a>
+      </li>
+       
+
 
       <!-- Nav Item - Tables -->
-      <li class="nav-item">
+     {{--  <li class="nav-item">
         <a class="nav-link" href="#">
           <i class="fas fa-fw fa-table"></i>
           <span>Download History</span></a>
-      </li>
+      </li> --}}
       <li class="nav-item">
         <a class="nav-link" href="#">
           <i class="fas fa-fw fa-table"></i>
@@ -434,6 +451,10 @@
               placeholder:'select genres',
               allowClear:true
             });
+            //  $("#editstar").select2({
+            //   placeholder:'',
+            //   allowClear:true
+            // });
           </script>
 
         </body>

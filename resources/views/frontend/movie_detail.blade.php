@@ -32,7 +32,7 @@
 						@else
 						<div class="btn-transform transform-vertical">
 							<div><a href="#" class="item item-1 yellowbtn"> <i class="ion-card"></i>Login to Download</a></div>
-							<div><a href="{{route('loginpage')}}" class="item item-2 yellowbtn"><i class="ion-card"></i></a></div>
+							<div><a href="#" class="item item-2 yellowbtn"><i class="ion-card"></i></a></div>
 						</div>
 						@endrole
 					</div>
@@ -109,13 +109,13 @@
 											<div class="sb-it">
 												<h6>Stars: </h6>
 												@foreach($movie->actors as $actor)
-												<p><a href="#">{{$actor->name}}</a></p>
+												<p><a href="{{ route('celepage',$actor->id)}}">{{$actor->name}}</a></p>
 												@endforeach
 											</div>
 											<div class="sb-it">
 												<h6>Genres:</h6>
 												@foreach($movie->genres as $genre)
-												<p><a href="#">{{$genre->title}}</a></p>
+												<p><a href="{{ route('typepage',$genre->id)}}">{{$genre->title}}</a></p>
 												@endforeach
 											</div>
 											<div class="sb-it">

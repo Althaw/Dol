@@ -49,9 +49,9 @@ Route::get('comming/{id}','PageController@commingfun')->name('commingpage');
 
 Route::get('movie','PageController@moviefun')->name('moviepage');
 
-Route::get('loginform','PageController@loginfun')->name('loginpage');
+//Route::get('loginform','PageController@loginfun')->name('loginpage');
 
-Route::get('signup','PageController@signupfun')->name('signuppage');
+//Route::get('signup','PageController@signupfun')->name('signuppage');
 
 Route::get('help','PageController@helpfun')->name('helppage');
 

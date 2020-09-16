@@ -31,12 +31,11 @@
   <div class="col-md-5 mb-3 ml-2">
     <label for="validationDefault01">Director</label>
     <div class="col-md-12">
-      <input type="text" name="director" value="{{$movies->director}}" readonly="">
-      {{-- <select class="form-control form-control-md" id="inpurBrand" name="director" value={{$movies->director}}>
+      <select class="form-control form-control-md" id="inpurBrand" name="director" value={{$movies->director}}>
         @foreach ($directors as $director)
-        <option value="{{$director->id}}" readonly>{{$director->name}}</option>
+        <option value="{{$director->id}}" {{$director->name == $movies->director ? 'selected':''}}>{{$director->name}}</option>
         @endforeach
-      </select> --}}
+      </select>
     </div>      
     @error('director')
     <div class="alert alert-danger">{{$message}}</div>
@@ -45,12 +44,11 @@
   <div class="col-md-5 mb-3">
     <label for="validationDefault02">Genres</label>
     <div class="col-md-12">
-      <input type="text" name="genre" value="{{$movies->genre}}" readonly="">
-      {{-- <select class="form-control form-control-md" id="inpurBrand" name="genre" val>
+      <select class="form-control form-control-md" id="inpurBrand" name="genre" val>
         @foreach ($genres as $genre)
         <option value="{{ $genre->id }}">{{$genre->title}}</option>
         @endforeach
-      </select> --}}
+      </select>
     </div>   
     @error('genre')
     <div class="alert alert-danger">{{$message}}</div>
@@ -67,7 +65,11 @@
     </div>
     <div class="col-md-5 mb-3">
       <label for="validationDefault02">Stars</label>
-      <input type="text" class="form-control" id="validationDefault02" name="star" value="{{$movies->stars}}" readonly="">
+       <select class="form-control form-control-md" id="star" name="star[]" value="{{$movies->stars}}" multiple="multiple">
+        @foreach ($actors as $actor)
+        <option value="{{ $actor->id }}">{{$actor->name}}</option>
+        @endforeach
+      </select>
       @error('star')
 		<div class="alert alert-danger">{{$message}}</div>
 		@enderror
