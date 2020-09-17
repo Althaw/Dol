@@ -91,14 +91,10 @@
 											<div class="title-hd-sm">
 												<h4>Comment</h4>
 											</div>
-											<table class="border">
-													<tbody id="add_comment">
-														<tr></tr>
-													</tbody>
-												</table>
-												<form method="post" action="#">
-											<input type="text" name="comment"><br>
-											<input type="submit" class="btn btn-primary" value="Add" name="btnsubmit">
+											<form method="post" action="{{route('comments.store',$movie->id)}}">
+												@csrf
+											<textarea class="form-control" id="notes" placeholder="Your Note Here!" name="note"></textarea>
+											<input type="submit" class="btn btn-primary" value="Send" name="btnsubmit">
 											</form>
 										</div>
 										<div class="col-md-4 col-xs-12 col-sm-12">

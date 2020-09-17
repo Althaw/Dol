@@ -32,7 +32,7 @@
     </div>
   </div>
 </div>
-<div class="movie-items mt-6">
+{{-- <div class="movie-items mt-6">
   <div class="container">
     <div class="row ipad-width">
       <div class="col-md-8">
@@ -72,5 +72,5 @@
       </div>
     </div>
   </div>
-</div>
+</div> --}}
 @endsection

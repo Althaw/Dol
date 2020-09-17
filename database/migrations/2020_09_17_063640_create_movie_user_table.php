@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCommentTable extends Migration
+class CreateMovieUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateCommentTable extends Migration
      */
     public function up()
     {
-        Schema::create('comment', function (Blueprint $table) {
+        Schema::create('movie_user', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('movie_id');
+             $table->unsignedBigInteger('movie_id');
             $table->unsignedBigInteger('user_id');
-            $table->string('comment');
             $table->timestamps();
 
             $table->foreign('movie_id')
@@ -29,7 +28,6 @@ class CreateCommentTable extends Migration
                     ->references('id')
                     ->on('users')
                     ->onDelete('cascade');
-           
         });
     }
 
@@ -40,6 +38,6 @@ class CreateCommentTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('comment');
+        Schema::dropIfExists('movie_user');
     }
 }

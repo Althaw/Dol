@@ -28,7 +28,9 @@ class CreateMoviesTable extends Migration
             $table->integer('release_year');
             $table->string('run_time');
             $table->string('release_country');
-            $table->integer('rating');
+            $table->float('rating');
+            $table->string('type');
+            $table->text('trailer');
             $table->timestamps();
         });
     }

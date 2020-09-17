@@ -3,9 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Movie;
 
 class CommentController extends Controller
 {
+    public function __construct($value='')
+        {
+        $this->middleware('role:Admin')->only('index','show');
+        $this->middleware('role:User')->only('store');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -34,7 +41,19 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd($request);
+        $request->validate([
+            'comment'=>'required|min:4|max:25'
+        ]);
+        // $movie=Movie::find($id);
+        $comment=new Comment;
+        $comment->movie_id=$movie->id;
+        $comment->user_id=Auth::id();
+        $comment->comment=$request->comment;
+        $comment->save();
+        //dd($comment);
+
+        return 'Successful';
     }
 
     /**

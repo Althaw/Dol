@@ -87,6 +87,12 @@ class PageController extends Controller
         $movies=Movie::all();
         return view('frontend.help',compact('movies','genres','actors'));
     }
+    public function search($value='')
+    {
+      $search_text=$_GET['query'];
+      $movies=Movie::where('title','LIKE','%'.$search_text.'%')->get();
+      return view('frontend.search',compact('movies'));
+    }
     
 
 }

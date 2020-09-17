@@ -26,7 +26,9 @@ Route::resource('actors','ActorController');
 Route::resource('directors','DirectorController');
 
 Route::resource('genres','GenresController');
+
 });
+Route::resource('comments','CommentController');
 
 
 
@@ -49,7 +51,7 @@ Route::get('comming/{id}','PageController@commingfun')->name('commingpage');
 
 Route::get('movie','PageController@moviefun')->name('moviepage');
 
-//Route::get('loginform','PageController@loginfun')->name('loginpage');
+Route::get('/search','PageController@search')->name('searchpage');
 
 //Route::get('signup','PageController@signupfun')->name('signuppage');
 

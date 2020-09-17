@@ -61,7 +61,9 @@ class MovieController extends Controller
             "year"=>'required',
             "time"=>'required',
             "country"=>'required',
-            "rating"=>'required'
+            "rating"=>'required',
+            "type"=>'required',
+            "trailer"=>'required'
 
         ]);
         $starString=implode(',', $request->input('star'));
@@ -90,6 +92,8 @@ class MovieController extends Controller
             $movie->run_time=$request->time;
             $movie->release_country=$request->country;
             $movie->rating=$request->rating;
+            $movie->type=$request->type;
+            $movie->trailer=$request->trailer;
             $movie->save();
             //$genre=Genres::all();
             foreach ($request->genre as $genre) {
@@ -169,7 +173,9 @@ class MovieController extends Controller
             "year"=>'required',
             "time"=>'required',
             "country"=>'required',
-            "rating"=>'required'
+            "rating"=>'required',
+            "type"=>'required',
+            "trailer"=>'required'
 
         ]);
             $movie=Movie::find($id);
@@ -197,6 +203,8 @@ class MovieController extends Controller
             $movie->run_time=$request->time;
             $movie->release_country=$request->country;
             $movie->rating=$request->rating;
+             $movie->type=$request->type;
+            $movie->trailer=$request->trailer;
             $movie->save();
 
         //redirect

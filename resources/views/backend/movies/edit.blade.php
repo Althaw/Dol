@@ -142,6 +142,22 @@
 		@enderror
     </div>
   </div>
+  <div class="form-row">
+    <div class="col-md-5 mb-3 ml-2">
+    <label for="validationDefault01">Type</label>
+    <input type="text" class="form-control" id="validationDefault01" name="type" value="{{$movies->type}}">
+    @error('type')
+    <div class="alert alert-danger">{{$message}}</div>
+    @enderror
+  </div>
+  <div class="col-md-5 mb-3 ml-2">
+    <label for="validationDefault01">Trailer</label>
+    <input type="text" class="form-control" id="validationDefault01" name="trailer" value="{{$movies->trailer}}">
+    @error('trailer')
+    <div class="alert alert-danger">{{$message}}</div>
+    @enderror
+  </div>
+</div>
 		<div class="col-lg-6">
 			<input type="submit" class="btn btn-primary" value="Update" name="btn_submit">
 		</div>
