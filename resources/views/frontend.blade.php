@@ -59,7 +59,7 @@
 					<input class="custom-control-input" id="rememberPasswordCheck" type="checkbox" />
 					<label class="custom-control-label" for="rememberPasswordCheck">Remember password</label>
 				</div>
-				<a class="small" href="#">Forgot Password?</a><a href="#">Register!</a>
+				<a class="small" href="#">Forgot Password?</a>
 			</div>
 			<div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
 				<button type="submit" class="btn btn-secondary mainfullbtncolor btn-block">Login</button>
@@ -83,13 +83,13 @@
         <form method="POST" action="{{ route('register') }}">
 			@csrf
 			<div class="form-row">
-				<div class="col-md-6">
+				<div class="col-md-12">
 					<div class="form-group">
 						<label class="small mb-1" for="inputName"> Name</label>
 						<input class="form-control py-4" id="inputName" type="text" placeholder="Enter Name" name="name" />
 					</div>
 				</div>
-				<div class="col-md-6">
+				<div class="col-md-12">
 					<div class="form-group">
 				<label class="small mb-1" for="inputEmailAddress">Email</label>
 				<input class="form-control py-4" id="inputEmailAddress" type="email" aria-describedby="emailHelp" placeholder="Enter email address" name="email" />
@@ -99,7 +99,7 @@
 
 			
 			<div class="form-row">
-				<div class="col-md-6">
+				<div class="col-md-12">
 					<div class="form-group">
 						<label class="small mb-1" for="inputPassword">Password</label>
 						<input class="form-control py-4" id="inputPassword" type="password" placeholder="Enter password" name="password" />
@@ -107,7 +107,7 @@
 					</div>
 
 				</div>
-				<div class="col-md-6">
+				<div class="col-md-12">
 					<div class="form-group">
 						<label class="small mb-1" for="inputConfirmPassword">Confirm Password</label>
 						<input class="form-control py-4" id="inputConfirmPassword" type="password" placeholder="Confirm password" name="password_confirmation" />
