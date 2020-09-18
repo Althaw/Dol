@@ -44,7 +44,7 @@
 					<ul class="tab-links-2">
 						<li class="active"><a href="#tab21">#Popular</a></li>
 						<li><a href="#tab22"> #Top rated</a></li>
-						<li><a href="#tab23">  #Review </a></li>
+						{{-- <li><a href="#tab23">  #Review </a></li> --}}
 						{{-- <li><a href="#tab24"> #Most reviewed</a></li>  --}}                       
 					</ul>
 					<div class="tab-content">
@@ -96,51 +96,6 @@
 								</div>
 							</div>
 						</div>
-						<div id="tab23" class="tab">
-							<div class="row">
-								<div class="slick-multiItem">
-									@foreach($movies as $movie)
-									@if($movie->type=='review')
-									<div class="slide-it">
-										<div class="movie-item">
-											{{-- <div class="mv-img"> --}}
-												<img src="{{ asset($movie->photo)}}" width="200" height="200">
-											{{--  </div> --}}
-											<div class="hvr-inner">
-												<a  href="{{route('detailpage',$movie->id)}}"> View more <i class="ion-android-arrow-dropright"></i> </a>
-											</div>
-											<div class="title-in">
-												<h6><a href="#">{{$movie->title}}</a></h6>
-												<p><i class="ion-android-star"></i><span>{{$movie->rating}}</span> /10</p>
-											</div>
-										</div>
-									</div>
-									@endif
-									@endforeach
-								</div>
-							</div>
-						</div>
-						{{-- <div id="tab24" class="tab active">
-							<div class="row">
-								<div class="slick-multiItem">
-									@foreach($movies as $movie)
-									<div class="slide-it">
-										<div class="movie-item">
-												<img src="{{ asset($movie->photo)}}" width="200" height="200">
-											</div>
-											<div class="hvr-inner">
-												<a  href="{{route('detailpage',$movie->id)}}"> View more <i class="ion-android-arrow-dropright"></i> </a>
-											</div>
-											<div class="title-in">
-												<h6><a href="#">{{$movie->title}}</a></h6>
-												<p><i class="ion-android-star"></i><span>{{$movie->rating}}</span> /10</p>
-											</div>
-										</div>
-									</div>
-									@endforeach
-								</div>
-							</div>
-						</div> --}}
 					</div>
 				</div>
 			</div>

@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Comments extends Model
+class Comment extends Model
 {
-    public function users($value='')
+     public function users($value='')
     {
     	return $this->hasMany('App\User');
     }

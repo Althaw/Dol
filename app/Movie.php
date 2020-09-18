@@ -25,7 +25,7 @@ class Movie extends Model
     }
     public function users($value='')
     {
-        return $this->belongsToMany('App\User','movie_user')
+        return $this->belongsToMany('App\User')
                 ->withTimestamps();
     }
      public function comments($value='')

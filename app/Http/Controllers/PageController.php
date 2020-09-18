@@ -6,6 +6,7 @@ use App\Movie;
 use App\Actor;
 use App\Genres;
 use App\Director;
+use App\Comment;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -15,13 +16,14 @@ class PageController extends Controller
     //     $this->middleware('role:Admin')->only('detailfun');
     //     $this->middleware('role:User')->only('detailfun');
     // }
-    public function indexfun($value='')
+    public function indexfun()
     {
         $actors=Actor::all();
         $genres=Genres::all();
         $movies=Movie::all();
         $directors=Director::all();
-    	return view('frontend.master',compact('genres','actors','movies','directors'));
+        $comments=Comment::all();
+    	return view('frontend.master',compact('genres','actors','movies','directors','comments'));
     }
     public function detailfun($id)
     {
@@ -29,7 +31,8 @@ class PageController extends Controller
         $actor=Actor::find($id);
         $director=Director::find($id);
         $movie=Movie::find($id);
-    	return view('frontend.movie_detail',compact('movie','genre','actor','director'));
+        $comments=Comment::all();
+    	return view('frontend.movie_detail',compact('movie','genre','actor','director','comments'));
     }
     public function typefun($id)
     {

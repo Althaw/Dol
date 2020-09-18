@@ -33,7 +33,7 @@
     <div class="col-md-12">
       <select class="form-control form-control-md" id="inpurBrand" name="director" value={{$movies->director}}>
         @foreach ($directors as $director)
-        <option value="{{$director->id}}" {{$director->name == $movies->director ? 'selected':''}}>{{$director->name}}</option>
+        <option value="{{$director->name}}" {{$director->name == $movies->director ? 'selected':''}}>{{$director->name}}</option>
         @endforeach
       </select>
     </div>      
@@ -44,9 +44,9 @@
   <div class="col-md-5 mb-3">
     <label for="validationDefault02">Genres</label>
     <div class="col-md-12">
-      <select class="form-control form-control-md" id="inpurBrand" name="genre" val>
+      <select class="form-control form-control-md" id="genre" name="genre[]" multiple="multiple">
         @foreach ($genres as $genre)
-        <option value="{{ $genre->id }}">{{$genre->title}}</option>
+        <option value="{{ $genre->id }}" {{ (old("genre") == $genre->id ? "selected":"") }}>{{$genre->title}}</option>
         @endforeach
       </select>
     </div>   

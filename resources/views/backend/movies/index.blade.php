@@ -15,8 +15,6 @@
 						<th>Title</th>
 						<th>Photo</th>
 						<th>Director</th>
-						<th>Genres</th>
-						<th>Stars</th>
 						<th>Action</th>
 				</thead>
 				<tbody>
@@ -28,11 +26,8 @@
 						<td>{{$movie->title}}</td>
 						<td><img src="{{ asset($movie->photo)}}" width="100" height="120"></td>
 						<td>{{$movie->director}}</td>
-						<td>{{$movie->genre}}</td>
-						{{-- <td>{{$movie->link}}</td> --}}
-						<td>{{$movie->stars}}</td>
 						<td>
-						<a href="" class="btn btn-info">Detail</a>
+						<a href="{{route('movies.show',$movie->id)}}" class="btn btn-info">Detail</a>
 						<a href="{{route('movies.edit',$movie->id)}}" class="btn btn-warning">Edit</a>
 						<form method="post" action="{{route('movies.destroy',$movie->id)}}" onsubmit="return confirm('Are You Sure?')">
 							@csrf

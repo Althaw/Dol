@@ -22,7 +22,7 @@
 					<div class="movie-btn">	
 						<div class="btn-transform transform-vertical red">
 							<div><a href="#" class="item item-1 redbtn"> <i class="ion-play"></i> {{$movie->title}}</a></div>
-							<div><a href="#"><i class="ion-play"></i></a></div>
+							<div><a href="{{route('commingpage',$movie->id)}}"><i class="ion-play"></i>Watch Trailer</a></div>
 						</div>
 						@role('User')
 						<div class="btn-transform transform-vertical">
@@ -85,17 +85,38 @@
 							<div class="tab-content">
 								<div id="overview" class="tab active">
 									<div class="row">
-										<div class="col-md-8 col-sm-12 col-xs-12 text-warning">
+										<div class="col-md-8 col-sm-12 col-xs-12 text-white">
 											<h4></h4>
 											<!-- movie cast -->
 											<div class="title-hd-sm">
 												<h4>Comment</h4>
 											</div>
-											<form method="post" action="{{route('comments.store',$movie->id)}}">
+											@foreach($comments as $comment)
+											@if($comment->movie_id == $movie->id)
+											<p>{{$comment->comment}}</p><hr>
+											{{-- <a href="#" class="parent-btn">{{$comment->comment}}</a><hr> --}}
+											@endif
+											@endforeach
+											<hr>
+											@role('User')
+											<form method="post" action="{{route('comments.store')}}">
 												@csrf
-											<textarea class="form-control" id="notes" placeholder="Your Note Here!" name="note"></textarea>
-											<input type="submit" class="btn btn-primary" value="Send" name="btnsubmit">
+												<div class="container">
+													<div class="row">
+														<div class="col-md-4">
+															<textarea class="form-control" id="notes" placeholder="Your Comment Here!" name="comment"  style="border: 2px solid blue;"></textarea>
+															@error('comment')
+															<div class="alert alert-danger">{{$message}}</div>
+															@enderror
+														</div>
+														<div class="col-md-4 bg-danger">
+															<input type="hidden" name="movie" value="{{$movie->id}}"><br>
+															<input type="submit" class="btn btn-danger" value="Send" name="btnsubmit" style="border: 2px solid blue;">
+														</div>
+													</div>
+												</div>
 											</form>
+											@else
 										</div>
 										<div class="col-md-4 col-xs-12 col-sm-12">
 											<div class="sb-it">
@@ -119,7 +140,7 @@
 												<p>{{$movie->release_year}}</p>
 											</div>
 											<div class="sb-it">
-												<h6>Release Year:</h6>
+												<h6>Release Country:</h6>
 												<p>{{$movie->release_country}}</p>
 											</div>
 											<div class="sb-it">
@@ -136,6 +157,7 @@
 												<img src="{{ asset('images/uploads/ads1.png')}}" alt="">
 											</div>
 										</div>
+										@endrole
 									</div>
 								</div>
 								<div id="reviews" class="tab">
@@ -147,24 +169,26 @@
 								</div>
 								<div id="moviesrelated" class="tab">
 									<div class="row">
-										<div class="col-md-6">
-											@foreach($movies as $movie)
+										@foreach($movies as $video)
+										@if($video->id != $movie->id)
+										<div class="col-md-3">
 											<div class="slide-it">
 												<div class="movie-item">
 													<div class="mv-img">
-														<img src="{{ asset($movie->photo)}}" alt="" width="185" height="284">
+														<img src="{{ asset($video->photo)}}" alt="" width="150" height="100">
 													</div>
 													<div class="hvr-inner text-danger">
-														<a  href="{{route('detailpage',$movie->id)}}"> View more <i class="ion-android-arrow-dropright"></i> </a>
+														<a  href="{{route('detailpage',$video->id)}}"> View more <i class="ion-android-arrow-dropright"></i> </a>
 													</div>
-													<div class="title-in">
+													{{-- <div class="title-in">
 														<h6><a href="#">{{$movie->title}}</a></h6>
 														<p><i class="ion-android-star"></i><span>{{$movie->rating}}</span> /10</p>
-													</div>
+													</div> --}}
 												</div>
 											</div>
-											@endforeach
 										</div>
+										@endif
+										@endforeach
 									</div>
 								</div>
 							</div>

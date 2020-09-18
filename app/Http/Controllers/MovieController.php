@@ -129,7 +129,7 @@ class MovieController extends Controller
      */
     public function show(Movie $movie)
     {
-        //
+        return view('backend.movies.show',compact('movie'));
     }
 
     /**
@@ -161,7 +161,6 @@ class MovieController extends Controller
         $request->validate([
             //form input name
             "title"=>'required',
-            "photo"=>'required',
             'director'=>'required',
             'genre'=>'required',
             "link"=>'required',

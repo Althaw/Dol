@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Comment;
+use App\User;
 use App\Movie;
 
 class CommentController extends Controller
@@ -47,13 +49,17 @@ class CommentController extends Controller
         ]);
         // $movie=Movie::find($id);
         $comment=new Comment;
-        $comment->movie_id=$movie->id;
+        $comment->movie_id=$request->movie;
         $comment->user_id=Auth::id();
         $comment->comment=$request->comment;
         $comment->save();
-        //dd($comment);
+        
+        // $comment->users()->attach($user->id);
+        // $comment->movies()->attach($movie->id);
+            
 
-        return 'Successful';
+        return back()->with('alert','Comment Successfully!');
+
     }
 
     /**

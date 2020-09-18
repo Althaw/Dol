@@ -39,7 +39,7 @@ class User extends Authenticatable
     ];
     public function movies($value='')
     {
-        return $this->belongsToMany('App\Movie','movie_user')
+        return $this->belongsToMany('App\Movie')
                      ->withTimestamps();
     }
      public function comments($value='')
