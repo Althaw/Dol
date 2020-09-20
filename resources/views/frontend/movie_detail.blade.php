@@ -93,7 +93,7 @@
 											</div>
 											@foreach($comments as $comment)
 											@if($comment->movie_id == $movie->id)
-											<p>{{$comment->comment}}</p><hr>
+											<p>:{{$comment->comment}}</p><hr>
 											{{-- <a href="#" class="parent-btn">{{$comment->comment}}</a><hr> --}}
 											@endif
 											@endforeach
@@ -104,7 +104,7 @@
 												<div class="container">
 													<div class="row">
 														<div class="col-md-4">
-															<textarea class="form-control" id="notes" placeholder="Your Comment Here!" name="comment"  style="border: 2px solid blue;"></textarea>
+															<textarea class="form-control" id="notes" placeholder="Add a Comment!" name="comment"  style="border: 2px solid blue;"></textarea>
 															@error('comment')
 															<div class="alert alert-danger">{{$message}}</div>
 															@enderror
@@ -116,6 +116,46 @@
 													</div>
 												</div>
 											</form>
+											</div>
+										<div class="col-md-4 col-xs-12 col-sm-12">
+											<div class="sb-it">
+												<h6>Director: </h6>
+												<p>{{$movie->director}}</p>
+											</div>
+											<div class="sb-it">
+												<h6>Stars: </h6>
+												@foreach($movie->actors as $actor)
+												<p><a href="{{ route('celepage',$actor->id)}}">{{$actor->name}}</a></p>
+												@endforeach
+											</div>
+											<div class="sb-it">
+												<h6>Genres:</h6>
+												@foreach($movie->genres as $genre)
+												<p><a href="{{ route('typepage',$genre->id)}}">{{$genre->title}}</a></p>
+												@endforeach
+											</div>
+											<div class="sb-it">
+												<h6>Release Year:</h6>
+												<p>{{$movie->release_year}}</p>
+											</div>
+											<div class="sb-it">
+												<h6>Release Country:</h6>
+												<p>{{$movie->release_country}}</p>
+											</div>
+											<div class="sb-it">
+												<h6>Run Time:</h6>
+												<p>{{$movie->run_time}}</p>
+											</div>
+											<div class="sb-it">
+												<h6>Good Point!</h6>
+												<p class="tags">
+													<span class="time"><a href="#">{{$movie->good_point}}</a></span>
+												</p>
+											</div>
+											<div class="ads">
+												<img src="{{ asset('images/uploads/ads1.png')}}" alt="">
+											</div>
+										</div>
 											@else
 										</div>
 										<div class="col-md-4 col-xs-12 col-sm-12">

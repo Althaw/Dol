@@ -58,7 +58,7 @@
                               <img src="{{ asset($movie->photo)}}" alt="" width="185" height="284">
                             </div>
                             <div class="hvr-inner">
-                              <a  href="{{route('detailpage',$movie->id)}}"> Read more <i class="ion-android-arrow-dropright"></i> </a>
+                              <a  href="{{route('detailpage',$movie->id)}}"> View more <i class="ion-android-arrow-dropright"></i> </a>
                             </div>
                             <div class="title-in">
                               <h6><a href="#">{{$movie->title}}</a></h6>

@@ -18,12 +18,12 @@ class PageController extends Controller
     // }
     public function indexfun()
     {
-        $actors=Actor::all();
+        // $actors=Actor::all();
         $genres=Genres::all();
         $movies=Movie::all();
         $directors=Director::all();
         $comments=Comment::all();
-    	return view('frontend.master',compact('genres','actors','movies','directors','comments'));
+    	return view('frontend.master',compact('genres','movies','directors','comments'));
     }
     public function detailfun($id)
     {
@@ -32,14 +32,15 @@ class PageController extends Controller
         $director=Director::find($id);
         $movie=Movie::find($id);
         $comments=Comment::all();
-    	return view('frontend.movie_detail',compact('movie','genre','actor','director','comments'));
+        $movies=Movie::take(8)->get();
+    	return view('frontend.movie_detail',compact('movie','genre','actor','director','comments','movies'));
     }
     public function typefun($id)
     {
         $movies=Movie::all();
-        $actors=Actor::all();
+        // $actors=Actor::all();
         $genre=Genres::find($id);
-        return view('frontend.movie_type',compact('genre','movies','actors'));
+        return view('frontend.movie_type',compact('genre','movies'));
     }
     public function celefun($id)
     {
@@ -57,17 +58,17 @@ class PageController extends Controller
     }
     public function commingfun($id)
     {
-        $actors=Actor::all();
+        // $actors=Actor::all();
         $genres=Genres::all();
         $movie=Movie::find($id);
-    	return view('frontend.commingsoon',compact('movie','genres','actors'));
+    	return view('frontend.commingsoon',compact('movie','genres'));
     }
     public function movieFun($value='')
     {
-        $actors=Actor::all();
+        // $actors=Actor::all();
         $genres=Genres::all();
         $movies=Movie::all();
-        return view ('frontend.movie',compact('movies','actors','genres'));
+        return view ('frontend.movie',compact('movies','genres'));
     } 
     public function loginfun($value='')
     {

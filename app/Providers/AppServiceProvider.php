@@ -32,7 +32,7 @@ class AppServiceProvider extends ServiceProvider
         Schema::defaultStringLength(191);
         $genres=Genres::all();
         view::share('genres',$genres);
-        $actors=Actor::all();
+        $actors=Actor::take(10)->get();
         view::share('actors',$actors);
         $directors=Director::all();
         view::share('directors',$directors);

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Comment extends Model
 {
-     public function users($value='')
+     public function user($value='')
     {
     	return $this->hasMany('App\User');
     }

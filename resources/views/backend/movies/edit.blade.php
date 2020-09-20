@@ -46,7 +46,7 @@
     <div class="col-md-12">
       <select class="form-control form-control-md" id="genre" name="genre[]" multiple="multiple">
         @foreach ($genres as $genre)
-        <option value="{{ $genre->id }}" {{ (old("genre") == $genre->id ? "selected":"") }}>{{$genre->title}}</option>
+        <option value="{{ $genre->id }}">{{$genre->title}}</option>
         @endforeach
       </select>
     </div>   
